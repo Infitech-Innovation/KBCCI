@@ -296,7 +296,7 @@ body {
     color 0.18s ease;
 }
 .btn-cta--primary {
-  background: linear-gradient(90deg, var(--kbcci-green), var(--kbcci-yellow));
+  background: var(--kbcci-yellow);
   color: #19212b;
   border: 0;
   box-shadow: 0 12px 28px rgba(47, 122, 67, 0.28);
@@ -393,10 +393,10 @@ body {
   padding: 10px 12px;
   font-size: 0.86rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #fff;
   text-decoration: none;
   border-radius: 10px;
-  background: linear-gradient(90deg, var(--kbcci-green), var(--kbcci-yellow));
+  background: var(--kbcci-green);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
 .hero-header .header-carousel .caption .btn-mini:hover {
@@ -450,12 +450,7 @@ body {
 /* Headline last-word fade swap */
 .swap-words {
   display: inline-block;
-  background: linear-gradient(
-    90deg,
-    var(--kbcci-green),
-    var(--kbcci-yellow) 60%,
-    var(--kbcci-red)
-  );
+  background: var(--kbcci-green);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -586,17 +581,23 @@ body {
 }
 
 /* Feature cards with icons */
+#kbcci-feature-cards {
+    row-gap: 24px;
+    margin-top: 20px;
+}
+
 .feature-card {
-  background: #f7f7fa;
-  border: 1px solid rgba(17, 24, 39, 0.06);
+  background: #fff;
+  border: 1px solid rgba(17, 24, 39, 0.08);
   border-radius: 14px;
-  padding: 20px;
+  padding: 18px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
   height: 100%;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  /* margin-top: 20px; */
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-  text-align: left;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .feature-card i {
   width: 42px;
@@ -607,10 +608,8 @@ body {
   justify-content: center;
   border-radius: 12px;
   margin-bottom: 12px;
-  font-size: 1.2rem;
-  color: #fff;
-  background: linear-gradient(135deg, var(--kbcci-green), var(--kbcci-yellow));
-  box-shadow: 0 6px 16px rgba(47, 122, 67, 0.25);
+  font-size: 28px;
+  color: #f1b810;
 }
 .feature-card h6 {
   margin: 0 0 6px;
@@ -643,7 +642,7 @@ body {
     color 0.18s ease;
 }
 .btn-cta--primary {
-  background: linear-gradient(90deg, var(--kbcci-green), var(--kbcci-yellow));
+  background: var(--kbcci-yellow);
   color: #111;
   box-shadow: 0 12px 28px rgba(47, 122, 67, 0.22);
 }
@@ -726,7 +725,7 @@ body {
 }
 
 /* Feature cards (off-white; icon + hover) */
-.feature-card {
+/* .feature-card {
   background: #f7f7fa;
   border: 1px solid rgba(17, 24, 39, 0.06);
   border-radius: 14px;
@@ -764,7 +763,7 @@ body {
 .feature-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.14);
-}
+} */
 
 /* CTAs (match hero style) */
 .btn-cta {
@@ -782,7 +781,7 @@ body {
     color 0.18s ease;
 }
 .btn-cta--primary {
-  background: linear-gradient(90deg, var(--kbcci-green), var(--kbcci-yellow));
+  background: var(--kbcci-yellow);
   color: #111;
   box-shadow: 0 12px 28px rgba(47, 122, 67, 0.22);
 }
@@ -1065,7 +1064,7 @@ body {
   font-weight: 800;
   letter-spacing: 0.3px;
   color: #111;
-  background: linear-gradient(135deg, var(--kbcci-green), var(--kbcci-yellow));
+  background: var(--kbcci-yellow);
   box-shadow: 0 10px 24px rgba(47, 122, 67, 0.25);
 }
 
@@ -1218,7 +1217,7 @@ body {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: linear-gradient(135deg, var(--kbcci-green), var(--kbcci-yellow));
+  background: var(--kbcci-yellow);
   color: #111;
   font-weight: 800;
   font-size: 0.8rem;
