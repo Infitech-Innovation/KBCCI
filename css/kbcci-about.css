@@ -1,0 +1,431 @@
+/* ===== KBCCI About Page Custom Styles ===== */
+/* These styles complement the existing Bootstrap and template styles. */
+
+/* ---- Hero ---- */
+.kbcci-about-hero {
+  position: relative;
+  overflow: hidden;
+  /* background: linear-gradient(135deg, #f9fafb 0%, #eef2f0 100%); */
+}
+.kbcci-arc {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(47, 122, 67, 0.06);
+  pointer-events: none;
+}
+.arc-1 {
+  width: 320px;
+  height: 320px;
+  top: -80px;
+  right: -60px;
+}
+.arc-2 {
+  width: 200px;
+  height: 200px;
+  bottom: -40px;
+  left: 20%;
+  background: rgba(241, 184, 16, 0.05);
+}
+.kbcci-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  background: #2f7a43;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+.grad-underline {
+  display: inline-block;
+  /* background: linear-gradient(180deg, transparent 60%, #f1b810 60%); */
+  padding: 0 4px;
+}
+
+/* ---- About section ---- */
+.about-img-tall {
+  height: 420px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.about-img-tall img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-img-logo {
+  height: 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: #fff;
+}
+.about-img-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Mini cards */
+.mini-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.mini-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
+}
+.mini-card i {
+  font-size: 20px;
+  margin-top: 2px;
+}
+.mini-card p {
+  margin: 0;
+  color: #374151;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.mini-card-green {
+  border-left: 4px solid #2f7a43;
+}
+.mini-card-green i {
+  color: #2f7a43;
+}
+.mini-card-yellow {
+  border-left: 4px solid #f1b810;
+}
+.mini-card-yellow i {
+  color: #8c6a00;
+}
+
+/* About title */
+.about-title {
+  font-weight: 800;
+}
+.about-title-highlight {
+  background: #f1b810;
+  color: #111;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* Checklists */
+.check-list i {
+  margin-right: 8px;
+}
+.check-green {
+  color: #2f7a43;
+}
+.check-yellow {
+  color: #f1b810;
+}
+.check-red {
+  color: #c43a34;
+}
+
+/* CTA button */
+.btn-membership {
+  background: #2f7a43;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  padding: 0.6rem 1.8rem;
+}
+.btn-membership:hover {
+  background: #236333;
+  color: #fff;
+}
+
+/* ---- Objectives section ---- */
+.objectives-section {
+  background: #fff;
+}
+.objectives-heading {
+  font-weight: 800;
+  color: #111827;
+}
+.objectives-highlight {
+  background: #f1b810;
+  color: #111;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Objective cards */
+.obj-card {
+  position: relative;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 16px;
+  padding: 22px 22px 24px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  animation: objIn 0.6s ease both;
+  animation-delay: var(--delay, 0s);
+}
+.obj-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.obj-card-green::before {
+  background: #2f7a43;
+}
+.obj-card-yellow::before {
+  background: #f1b810;
+}
+.obj-card-red::before {
+  background: #c43a34;
+}
+.obj-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+.obj-card-green:hover {
+  background: #eaf4ee;
+}
+.obj-card-yellow:hover {
+  background: #fff6d6;
+}
+.obj-card-red:hover {
+  background: #fde9e8;
+}
+
+.icon-badge {
+  width: 68px;
+  height: 68px;
+  border-radius: 16px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafb;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.icon-badge i {
+  font-size: 30px;
+}
+.obj-card-green .icon-badge i {
+  color: #2f7a43;
+}
+.obj-card-yellow .icon-badge i {
+  color: #f1b810;
+}
+.obj-card-red .icon-badge i {
+  color: #c43a34;
+}
+.obj-card:hover .icon-badge {
+  transform: scale(1.1);
+  background: #fff;
+}
+
+.obj-card h4 {
+  font-weight: 800;
+  color: #111827;
+  margin: 0.35rem 0 0.25rem;
+  text-align: center;
+}
+.obj-card p {
+  color: #4b5563;
+  margin: 0;
+  text-align: center;
+}
+
+@keyframes objIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---- Why KBCCI / Mission Vision ---- */
+.kbcci-services {
+  background: #f8fafc;
+}
+.about-heading {
+  font-weight: 800;
+}
+.about-heading span {
+  background: #f1b810;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.about-lead {
+  color: #1f2937;
+  font-size: 1.05rem;
+}
+
+/* Service cards (vision/mission) – keep original design */
+.service-item {
+  padding: 2rem 1.8rem;
+  border-radius: 0;
+  min-height: 100%;
+}
+.service-item.bg-primary {
+  background: #2f7a43 !important;
+  color: #fff;
+}
+
+.service-item.bg-light {
+  background: #f3f4f6 !important;
+}
+.service-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+.service-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ---- Footer ---- */
+.kbcci-footer {
+  background: #0b1110;
+  color: rgba(255, 255, 255, 0.75);
+}
+.kbcci-footer .footer-brand h1 {
+  color: #fff;
+}
+.kbcci-footer .footer-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+.kbcci-foot-heading {
+  color: #fff;
+  font-weight: 600;
+}
+.kbcci-footer .social-icons .btn {
+  border-color: rgba(241, 184, 16, 0.6);
+  color: #f1b810;
+}
+.kbcci-footer .social-icons .btn:hover {
+  background: #f1b810;
+  color: #0b1110;
+}
+.social-facebook {
+  border-color: rgba(241, 184, 16, 0.6) !important;
+  color: #f1b810 !important;
+}
+.social-instagram {
+  border-color: rgba(196, 58, 52, 0.6) !important;
+  color: #c43a34 !important;
+}
+.social-linkedin {
+  border-color: rgba(47, 122, 67, 0.6) !important;
+  color: #2f7a43 !important;
+}
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.25rem 0.75rem;
+}
+.footer-links-grid a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-weight: 400;
+}
+.footer-links-grid a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.copyright {
+  padding: 22px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 14px;
+}
+.copyright-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  border-color: rgba(241, 184, 16, 0.65);
+}
+.copyright-link:hover {
+  color: #f1b810;
+}
+.footer-menu {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+.footer-menu a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+.footer-menu a:hover {
+  color: #fff;
+}
+
+/* ---- Back to Top button (inline styles moved here) ---- */
+#backToTop {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1b810;
+  color: #2f7a43;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(47, 122, 67, 0.35);
+  z-index: 1030;
+  opacity: 0;
+  transform: translateY(12px) scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+#backToTop.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+#backToTop i {
+  font-size: 22px;
+  line-height: 1;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    filter: none;
+  }
+  50% {
+    filter: brightness(1.08);
+  }
+}
+
+/* ---- Responsive tweaks ---- */
+@media (max-width: 575.98px) {
+  .about-img-tall {
+    height: 360px !important;
+  }
+}
