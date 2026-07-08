@@ -296,13 +296,17 @@
         </div>
       </div>
     </section>
-    
+
     <!-- ===== PACKAGE ===== -->
-    <section id="package" class="container-fluid py-5" style="background: #fff">
+    <section
+      id="package"
+      class="container-fluid py-5"
+      style="background: #d4edda"
+    >
       <div class="container py-4">
         <div class="text-center mb-5">
           <h2 class="section-title">
-            Membership <span class="section-title-highlight">Package</span>
+            Membership <span class="section-title-highlight">Packages</span>
           </h2>
           <p class="section-subtitle">
             One plan. All essentials. Scale with add-ons as needed.
@@ -316,9 +320,10 @@
               role="alert"
               style="
                 border-radius: 10px;
-                background-color: #d4edda;
+                background-color: #fff3cd;
                 border-color: #c3e6cb;
-                color: #155724;
+                /* color: #155724; */
+                color: black;
               "
             >
               <i class="fa fa-info-circle me-2"></i> It's free for people who
@@ -327,262 +332,372 @@
           </div>
         </div>
 
-        <!-- Updated Row for Side-by-Side Alignment -->
-        <div class="row justify-content-center g-3">
-          <!-- Card 1 -->
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.08s">
-            <div class="kb-package h-100">
-              <div class="kb-package-accent"></div>
-              <div class="kb-package-header">
-                <div>
-                  <h4 class="kb-package-title">Corporate Partners</h4>
-                  <small class="kb-package-sub">KBCCI Membership</small>
-                </div>
-                <div style="text-align: right">
-                  <div class="kb-package-price">€ —</div>
-                  <small class="kb-package-price-label"
-                    >Annual • invoiced</small
+        <!-- FAQ Accordion Style Rows -->
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="accordion accordion-flush" id="membershipAccordion">
+              <!-- Package 1: Corporate Partners -->
+              <div
+                class="card border-0 mb-3 shadow-sm"
+                style="border-radius: 12px; overflow: hidden; background: #fff"
+              >
+                <div
+                  class="card-header bg-white border-0 py-3 px-4 d-flex justify-content-between align-items-center"
+                  style="cursor: pointer"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseCorp"
+                >
+                  <h5 class="mb-0 fw-bold text-dark text-start">
+                    Corporate Partners
+                  </h5>
+                  <span
+                    class="faq-icon fs-4 fw-bold"
+                    style="color: #111827; line-height: 1"
+                    >+</span
                   >
                 </div>
+                <div
+                  id="collapseCorp"
+                  class="collapse"
+                  data-bs-parent="#membershipAccordion"
+                >
+                  <div
+                    class="card-body bg-white pt-0 px-4 pb-4 border-0 text-start"
+                  >
+                    <hr class="my-2" style="border-top: 1px solid #f3f4f6" />
+                    <ul class="list-unstyled mb-4 pt-2">
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Priority
+                        business matchmaking and warm introductions
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Priority
+                        or discounted access to trade missions
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Company
+                        logo featured on the KBCCI website and event materials
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Listing in
+                        the KBCCI member directory
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Free
+                        first-year membership (Founding Corporate Partners only)
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i>
+                        Opportunity to serve on sector committees
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Voting
+                        rights at the Annual General Meeting (AGM)
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Early
+                        access to market updates and policy briefings
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Discounted
+                        advertising in the KBCCI newsletter
+                      </li>
+                    </ul>
+                    <div class="d-flex gap-2">
+                      <a
+                        href="#apply"
+                        class="btn btn-sm text-white px-4 py-2"
+                        style="
+                          background-color: #155724;
+                          border: none;
+                          border-radius: 6px;
+                        "
+                        >Apply Now</a
+                      >
+                    </div>
+                  </div>
+                </div>
               </div>
-              <hr class="kb-package-divider" />
-              <ul class="kb-package-list">
-                <li>
-                  <i class="fa fa-check text-green"></i> Priority business
-                  matchmaking and warm introductions
-                </li>
-                <li>
-                  <i class="fa fa-check text-yellow"></i> Priority or discounted
-                  access to trade missions
-                </li>
-                <li>
-                  <i class="fa fa-check text-red"></i> Company logo featured on
-                  the KBCCI website and event materials
-                </li>
-                <li>
-                  <i class="fa fa-check text-green"></i> Listing in the KBCCI
-                  member directory
-                </li>
-                <li>
-                  <i class="fa fa-check text-yellow"></i> Free first-year
-                  membership (Founding Corporate Partners only)
-                </li>
-                <li>
-                  <i class="fa fa-check text-red"></i> Opportunity to serve on
-                  sector committees
-                </li>
-                <li>
-                  <i class="fa fa-check text-green"></i> Voting rights at the
-                  Annual General Meeting (AGM)
-                </li>
-                <li>
-                  <i class="fa fa-check text-yellow"></i> Early access to market
-                  updates and policy briefings
-                </li>
-                <li>
-                  <i class="fa fa-check text-red"></i> Discounted advertising in
-                  the KBCCI newsletter
-                </li>
-              </ul>
-              <div class="kb-package-actions">
-                <a href="#apply" class="btn-primary">Apply Now</a>
-                <a href="#why" class="btn-outline-dark">Benefits</a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Card 2 -->
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.08s">
-            <div class="kb-package h-100">
-              <div class="kb-package-accent"></div>
-              <div class="kb-package-header">
-                <div>
-                  <h4 class="kb-package-title">Visibility/Content Partners</h4>
-                  <small class="kb-package-sub">KBCCI Membership</small>
-                </div>
-                <div style="text-align: right">
-                  <div class="kb-package-price">€ —</div>
-                  <small class="kb-package-price-label"
-                    >Annual • invoiced</small
+              <!-- Package 2: Visibility/Content Partners -->
+              <div
+                class="card border-0 mb-3 shadow-sm"
+                style="border-radius: 12px; overflow: hidden; background: #fff"
+              >
+                <div
+                  class="card-header bg-white border-0 py-3 px-4 d-flex justify-content-between align-items-center"
+                  style="cursor: pointer"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseVis"
+                >
+                  <h5 class="mb-0 fw-bold text-dark text-start">
+                    Visibility / Content Partners
+                  </h5>
+                  <span
+                    class="faq-icon fs-4 fw-bold"
+                    style="color: #111827; line-height: 1"
+                    >+</span
                   >
                 </div>
+                <div
+                  id="collapseVis"
+                  class="collapse"
+                  data-bs-parent="#membershipAccordion"
+                >
+                  <div
+                    class="card-body bg-white pt-0 px-4 pb-4 border-0 text-start"
+                  >
+                    <hr class="my-2" style="border-top: 1px solid #f3f4f6" />
+                    <ul class="list-unstyled mb-4 pt-2">
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Co-branded
+                        features in newsletters and event reports
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Joint
+                        content such as interviews, success stories, and member
+                        spotlights
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i>
+                        Cross-promotion on KBCCI social media channels
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> "Official
+                        Media Partner" recognition on the website and at events
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Priority
+                        access to cover flagship events
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Company
+                        logo displayed on the Media Partner wall
+                      </li>
+                    </ul>
+                    <div class="d-flex gap-2">
+                      <a
+                        href="#apply"
+                        class="btn btn-sm text-white px-4 py-2"
+                        style="
+                          background-color: #155724;
+                          border: none;
+                          border-radius: 6px;
+                        "
+                        >Apply Now</a
+                      >
+                    </div>
+                  </div>
+                </div>
               </div>
-              <hr class="kb-package-divider" />
-              <ul class="kb-package-list">
-                <li>
-                  <i class="fa fa-check text-green"></i> Co-branded features in
-                  newsletters and event reports
-                </li>
-                <li>
-                  <i class="fa fa-check text-yellow"></i> Joint content such as
-                  interviews, success stories, and member spotlights
-                </li>
-                <li>
-                  <i class="fa fa-check text-red"></i> Cross-promotion on KBCCI
-                  social media channels
-                </li>
-                <li>
-                  <i class="fa fa-check text-green"></i> "Official Media
-                  Partner" recognition on the website and at events
-                </li>
-                <li>
-                  <i class="fa fa-check text-yellow"></i> Priority access to
-                  cover flagship events
-                </li>
-                <li>
-                  <i class="fa fa-check text-red"></i> Company logo displayed on
-                  the Media Partner wall
-                </li>
-              </ul>
-              <div class="kb-package-actions">
-                <a href="#apply" class="btn-primary">Apply Now</a>
-                <a href="#why" class="btn-outline-dark">Benefits</a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Card 3 -->
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.08s">
-            <div class="kb-package h-100">
-              <div class="kb-package-accent"></div>
-              <div class="kb-package-header">
-                <div>
-                  <h4 class="kb-package-title">
-                    Diplomatic & Institutional Partners
-                  </h4>
-                  <small class="kb-package-sub">KBCCI Membership</small>
-                </div>
-                <div style="text-align: right">
-                  <div class="kb-package-price">€ —</div>
-                  <small class="kb-package-price-label"
-                    >Annual • invoiced</small
+              <!-- Package 3: Diplomatic & Institutional Partners -->
+              <div
+                class="card border-0 mb-3 shadow-sm"
+                style="border-radius: 12px; overflow: hidden; background: #fff"
+              >
+                <div
+                  class="card-header bg-white border-0 py-3 px-4 d-flex justify-content-between align-items-center"
+                  style="cursor: pointer"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseDipl"
+                >
+                  <h5 class="mb-0 fw-bold text-dark text-start">
+                    Diplomatic &amp; Institutional Partners
+                  </h5>
+                  <span
+                    class="faq-icon fs-4 fw-bold"
+                    style="color: #111827; line-height: 1"
+                    >+</span
                   >
                 </div>
+                <div
+                  id="collapseDipl"
+                  class="collapse"
+                  data-bs-parent="#membershipAccordion"
+                >
+                  <div
+                    class="card-body bg-white pt-0 px-4 pb-4 border-0 text-start"
+                  >
+                    <hr class="my-2" style="border-top: 1px solid #f3f4f6" />
+                    <ul class="list-unstyled mb-4 pt-2">
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i>
+                        Recognition as a Founding Institutional Partner
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i>
+                        Opportunity to contribute to KBCCI's trade and policy
+                        agenda
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i>
+                        Invitations to forums, the AGM, and trade mission
+                        planning sessions
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Early
+                        access to market insights and policy updates
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i>
+                        Opportunity to co-host flagship events
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Priority
+                        introductions to corporate members
+                      </li>
+                    </ul>
+                    <div class="d-flex gap-2">
+                      <a
+                        href="#apply"
+                        class="btn btn-sm text-white px-4 py-2"
+                        style="
+                          background-color: #155724;
+                          border: none;
+                          border-radius: 6px;
+                        "
+                        >Apply Now</a
+                      >
+                    </div>
+                  </div>
+                </div>
               </div>
-              <hr class="kb-package-divider" />
-              <ul class="kb-package-list">
-                <li>
-                  <i class="fa fa-check text-green"></i> Recognition as a
-                  Founding Institutional Partner
-                </li>
-                <li>
-                  <i class="fa fa-check text-yellow"></i> Opportunity to
-                  contribute to KBCCI's trade and policy agenda
-                </li>
-                <li>
-                  <i class="fa fa-check text-red"></i> Invitations to forums,
-                  the AGM, and trade mission planning sessions
-                </li>
-                <li>
-                  <i class="fa fa-check text-green"></i> Early access to market
-                  insights and policy updates
-                </li>
-                <li>
-                  <i class="fa fa-check text-yellow"></i> Opportunity to co-host
-                  flagship events
-                </li>
-                <li>
-                  <i class="fa fa-check text-red"></i> Priority introductions to
-                  corporate members
-                </li>
-              </ul>
-              <div class="kb-package-actions">
-                <a href="#apply" class="btn-primary">Apply Now</a>
-                <a href="#why" class="btn-outline-dark">Benefits</a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Card 4 -->
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.08s">
-            <div class="kb-package h-100">
-              <div class="kb-package-accent"></div>
-              <div class="kb-package-header">
-                <div>
-                  <h4 class="kb-package-title">
-                    Allied/ Affiliated Network Partners
-                  </h4>
-                  <small class="kb-package-sub">KBCCI Membership</small>
-                </div>
-                <div style="text-align: right">
-                  <div class="kb-package-price">€ —</div>
-                  <small class="kb-package-price-label"
-                    >Annual • invoiced</small
+              <!-- Package 4: Allied/Affiliated Network Partners -->
+              <div
+                class="card border-0 mb-3 shadow-sm"
+                style="border-radius: 12px; overflow: hidden; background: #fff"
+              >
+                <div
+                  class="card-header bg-white border-0 py-3 px-4 d-flex justify-content-between align-items-center"
+                  style="cursor: pointer"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseAllied"
+                >
+                  <h5 class="mb-0 fw-bold text-dark text-start">
+                    Allied / Affiliated Network Partners
+                  </h5>
+                  <span
+                    class="faq-icon fs-4 fw-bold"
+                    style="color: #111827; line-height: 1"
+                    >+</span
                   >
                 </div>
+                <div
+                  id="collapseAllied"
+                  class="collapse"
+                  data-bs-parent="#membershipAccordion"
+                >
+                  <div
+                    class="card-body bg-white pt-0 px-4 pb-4 border-0 text-start"
+                  >
+                    <hr class="my-2" style="border-top: 1px solid #f3f4f6" />
+                    <ul class="list-unstyled mb-4 pt-2">
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Reciprocal
+                        membership discounts
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Joint
+                        events and newsletter promotions
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Shared
+                        access to member directories
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Joint
+                        representation during trade missions
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i>
+                        Cross-listing on each organization's website
+                      </li>
+                    </ul>
+                    <div class="d-flex gap-2">
+                      <a
+                        href="#apply"
+                        class="btn btn-sm text-white px-4 py-2"
+                        style="
+                          background-color: #155724;
+                          border: none;
+                          border-radius: 6px;
+                        "
+                        >Apply Now</a
+                      >
+                    </div>
+                  </div>
+                </div>
               </div>
-              <hr class="kb-package-divider" />
-              <ul class="kb-package-list">
-                <li>
-                  <i class="fa fa-check text-green"></i> Reciprocal membership
-                  discounts
-                </li>
-                <li>
-                  <i class="fa fa-check text-yellow"></i> Joint events and
-                  newsletter promotions
-                </li>
-                <li>
-                  <i class="fa fa-check text-red"></i> Shared access to member
-                  directories
-                </li>
-                <li>
-                  <i class="fa fa-check text-green"></i> Joint representation
-                  during trade missions
-                </li>
-                <li>
-                  <i class="fa fa-check text-yellow"></i> Cross-listing on each
-                  organization's website
-                </li>
-              </ul>
-              <div class="kb-package-actions">
-                <a href="#apply" class="btn-primary">Apply Now</a>
-                <a href="#why" class="btn-outline-dark">Benefits</a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Card 5 -->
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.08s">
-            <div class="kb-package h-100">
-              <div class="kb-package-accent"></div>
-              <div class="kb-package-header">
-                <div>
-                  <h4 class="kb-package-title">Enabling/In Kind Partners</h4>
-                  <small class="kb-package-sub">KBCCI Membership</small>
-                </div>
-                <div style="text-align: right">
-                  <div class="kb-package-price">€ —</div>
-                  <small class="kb-package-price-label"
-                    >Annual • invoiced</small
+              <!-- Package 5: Enabling/In Kind Partners -->
+              <div
+                class="card border-0 mb-3 shadow-sm"
+                style="border-radius: 12px; overflow: hidden; background: #fff"
+              >
+                <div
+                  class="card-header bg-white border-0 py-3 px-4 d-flex justify-content-between align-items-center"
+                  style="cursor: pointer"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseEnabling"
+                >
+                  <h5 class="mb-0 fw-bold text-dark text-start">
+                    Enabling / In Kind Partners
+                  </h5>
+                  <span
+                    class="faq-icon fs-4 fw-bold"
+                    style="color: #111827; line-height: 1"
+                    >+</span
                   >
                 </div>
-              </div>
-              <hr class="kb-package-divider" />
-              <ul class="kb-package-list">
-                <li>
-                  <i class="fa fa-check text-green"></i> "Powered by" branding
-                  at sponsored events
-                </li>
-                <li>
-                  <i class="fa fa-check text-yellow"></i> Company logo on event
-                  signage, the KBCCI website, and event reports
-                </li>
-                <li>
-                  <i class="fa fa-check text-red"></i> Preferential
-                  opportunities for future partnerships and bookings
-                </li>
-                <li>
-                  <i class="fa fa-check text-green"></i> Public recognition in
-                  post-event reports
-                </li>
-                <li>
-                  <i class="fa fa-check text-yellow"></i> First opportunity to
-                  support the annual flagship event
-                </li>
-              </ul>
-              <div class="kb-package-actions">
-                <a href="#apply" class="btn-primary">Apply Now</a>
-                <a href="#why" class="btn-outline-dark">Benefits</a>
+                <div
+                  id="collapseEnabling"
+                  class="collapse"
+                  data-bs-parent="#membershipAccordion"
+                >
+                  <div
+                    class="card-body bg-white pt-0 px-4 pb-4 border-0 text-start"
+                  >
+                    <hr class="my-2" style="border-top: 1px solid #f3f4f6" />
+                    <ul class="list-unstyled mb-4 pt-2">
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> "Powered
+                        by" branding at sponsored events
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Company
+                        logo on event signage, the KBCCI website, and event
+                        reports
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i>
+                        Preferential opportunities for future partnerships and
+                        bookings
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> Public
+                        recognition in post-event reports
+                      </li>
+                      <li class="mb-2">
+                        <i class="fa fa-check text-success me-2"></i> First
+                        opportunity to support the annual flagship event
+                      </li>
+                    </ul>
+                    <div class="d-flex gap-2">
+                      <a
+                        href="#apply"
+                        class="btn btn-sm text-white px-4 py-2"
+                        style="
+                          background-color: #155724;
+                          border: none;
+                          border-radius: 6px;
+                        "
+                        >Apply Now</a
+                      >
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

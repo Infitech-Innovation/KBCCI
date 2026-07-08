@@ -8,7 +8,6 @@
       & Belgium for Trade, Investment & Growth
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <meta
       name="description"
       content="KBCCI connects Kenyan and Benelux-EU businesses with B2B matchmaking, trade missions, market & policy intelligence, and compliance guidance to unlock cross-border growth."
@@ -88,7 +87,6 @@
     />
 
     <!-- Preconnects -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -166,8 +164,563 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
 
-    <!-- KBCCI Homepage Custom Styles -->
-    <!-- <link href="css/kbcci-home.css" rel="stylesheet" /> -->
+    <style>
+      /* ===== KBCCI CUSTOM STYLES ===== */
+
+      /* ---- fade-up ---- */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .fade-up.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ---- typer word swap ---- */
+      #kb-typer {
+        display: inline-block;
+        transition: opacity 0.25s ease;
+      }
+      #kb-typer.is-out {
+        opacity: 0;
+      }
+
+      /* ---- hero ---- */
+      .hero--kbcci {
+        position: relative;
+        background: #f9fafb;
+        overflow: hidden;
+      }
+      .kbcci-title {
+        font-weight: 800;
+        color: #111827;
+        line-height: 1.1;
+      }
+      .kbcci-title .t-primary {
+        color: #2f7a43;
+      }
+      .kbcci-title .t-yellow {
+        color: #f1b810;
+      }
+      .kbcci-sub {
+        font-size: 1.05rem;
+        color: #4b5563;
+        max-width: 52ch;
+      }
+
+      /* ---- arc nodes ---- */
+      .kbcci-arc {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 320px;
+        height: 320px;
+        pointer-events: none;
+        opacity: 0.35;
+      }
+      .kbcci-arc .node {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        filter: blur(1px);
+      }
+      .kbcci-arc .node--red {
+        background: #c43a34;
+        top: 20%;
+        right: 18%;
+      }
+      .kbcci-arc .node--green {
+        background: #2f7a43;
+        top: 48%;
+        right: 8%;
+      }
+      .kbcci-arc .node--yellow {
+        background: #f1b810;
+        top: 72%;
+        right: 22%;
+      }
+
+      /* ---- buttons ---- */
+      .btn-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        border-radius: 10px;
+        padding: 0.65rem 1.6rem;
+        text-decoration: none;
+        transition: 0.2s;
+        border: none;
+        font-size: 0.9rem;
+      }
+      .btn-cta--primary {
+        background: #2f7a43;
+        color: #fff;
+      }
+      .btn-cta--primary:hover {
+        background: #1f5a30;
+        color: #fff;
+      }
+      .btn-cta--ghost {
+        background: transparent;
+        color: #1f2937;
+        border: 2px solid #d1d5db;
+      }
+      .btn-cta--ghost:hover {
+        background: #f3f4f6;
+        border-color: #9ca3af;
+      }
+      .btn-cta--soft {
+        background: #f3f4f6;
+        color: #1f2937;
+        border: 2px solid transparent;
+      }
+      .btn-cta--soft:hover {
+        background: #e5e7eb;
+      }
+
+      /* ---- about ---- */
+      .about-heading {
+        font-weight: 800;
+        color: #111827;
+      }
+      .about-heading span {
+        color: #2f7a43;
+      }
+      .about-lead {
+        font-size: 0.95rem;
+        color: #374151;
+        line-height: 1.6;
+      }
+      .about-img-card {
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+      }
+      .about-img-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+      .about-img-card:hover img {
+        transform: scale(1.02);
+      }
+      .about-img-tall {
+        height: 100%;
+        min-height: 260px;
+      }
+      .about-img-tall img {
+        height: 100%;
+        object-fit: cover;
+      }
+      .about-ribbon {
+        background: #2f7a43;
+        color: #fff;
+        text-align: center;
+        font-weight: 700;
+        border-radius: 12px;
+        letter-spacing: 0.3px;
+      }
+
+      /* ---- feature cards ---- */
+      .feature-card {
+        background: #fff;
+        border-radius: 14px;
+        padding: 1.2rem 1rem 1rem;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+        transition: 0.25s ease;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        height: 100%;
+      }
+      .feature-card i {
+        font-size: 1.6rem;
+        color: #2f7a43;
+        margin-bottom: 6px;
+      }
+      .feature-card h6 {
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 4px;
+      }
+      .feature-card p {
+        font-size: 0.85rem;
+        color: #6b7280;
+        margin: 0;
+      }
+
+      /* ---- service cards (vision/mission) ---- */
+      .service-item {
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+        transition: 0.3s ease;
+        min-height: 320px;
+      }
+      .service-item.bg-primary {
+        background: #2f7a43;
+        color: #fff;
+      }
+      .service-item.bg-light {
+        background: #f9fafb;
+        color: #1f2937;
+      }
+      .service-item h3 {
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .service-item p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+      .service-item .service-img {
+        display: block;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .service-item .service-img img {
+        height: 120px;
+        object-fit: cover;
+      }
+
+      /* ---- partner cards ---- */
+      .partner-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 1.5rem 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        border: 1px solid #f1f3f4;
+        transition: 0.2s ease;
+      }
+      .partner-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+      }
+      .partner-avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        background: #e5e7eb;
+      }
+      .partner-name {
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 2px;
+        font-size: 0.95rem;
+      }
+      .partner-title {
+        font-size: 0.8rem;
+        color: #6b7280;
+        margin: 0;
+      }
+      .partner-org {
+        font-size: 0.75rem;
+        color: #9ca3af;
+        margin: 0;
+      }
+
+      /* ---- events ---- */
+      .kbcci-events {
+        background: #f9fafb;
+      }
+      .testimonial-item .testimonial-img {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+      .testimonial-item .testimonial-img img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+      }
+      .badge-soon {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        background: #f1b810;
+        color: #111;
+        font-weight: 700;
+        font-size: 0.75rem;
+        padding: 4px 14px;
+        border-radius: 40px;
+        letter-spacing: 0.3px;
+      }
+      .testimonial-text h3 {
+        font-weight: 700;
+        color: #111827;
+      }
+      .testimonial-text p {
+        color: #6b7280;
+        font-size: 0.9rem;
+      }
+
+      /* ---- footer ---- */
+      .kbcci-footer a.btn-link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: 0.2s;
+        font-size: 0.9rem;
+        padding: 2px 0;
+      }
+      .kbcci-footer a.btn-link:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+      .footer-links-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .kbcci-footer .copyright {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 20px;
+        margin-top: 20px;
+        font-size: 0.85rem;
+      }
+
+      /* ---- back to top ---- */
+      #backToTop {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 999;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #2f7a43;
+        color: #fff;
+        border: none;
+        box-shadow: 0 4px 14px rgba(47, 122, 67, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        opacity: 0;
+        transform: translateY(12px) scale(0.9);
+        transition: 0.3s ease;
+        pointer-events: none;
+        text-decoration: none;
+      }
+      #backToTop.show {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+      }
+      #backToTop:hover {
+        background: #1f5a30;
+        transform: scale(1.05);
+      }
+
+      /* ---- modal ---- */
+      .modal-content {
+        border-radius: 18px;
+        border: none;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      }
+      .modal-header {
+        background: #2f7a43;
+        color: #fff;
+        border-radius: 18px 18px 0 0;
+        padding: 16px 22px;
+      }
+      .modal-header .modal-title {
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+      .btn-submit-waitlist {
+        background: #2f7a43;
+        color: #fff;
+        font-weight: 700;
+        border-radius: 10px;
+        padding: 0.55rem 1.5rem;
+        border: none;
+      }
+      .btn-submit-waitlist:hover {
+        background: #1f5a30;
+        color: #fff;
+      }
+      .btn-cancel {
+        background: #f3f4f6;
+        color: #374151;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+      .btn-cancel:hover {
+        background: #e5e7eb;
+      }
+
+      /* ---- members carousel ---- */
+      .members-carousel-wrapper {
+        position: relative;
+        overflow: hidden;
+        padding: 0 10px;
+      }
+      .members-carousel-viewport {
+        overflow: hidden;
+        border-radius: 16px;
+      }
+      .members-carousel-track {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        will-change: transform;
+      }
+      .members-carousel-slide {
+        flex: 0 0 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        padding: 12px 4px;
+      }
+      .member-logo {
+        background: #fff;
+        border-radius: 14px;
+        padding: 16px 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        border: 1px solid #f1f3f4;
+        min-height: 72px;
+        transition: 0.25s ease;
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      .member-logo.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .member-logo:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+      }
+      .member-logo img {
+        max-width: 100%;
+        max-height: 44px;
+        object-fit: contain;
+        filter: grayscale(0.1);
+        transition: 0.2s;
+      }
+      .member-logo:hover img {
+        filter: grayscale(0);
+      }
+
+      .members-carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 5;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.4rem;
+        font-weight: 300;
+        color: #1f2937;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        transition: 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .members-carousel-btn:hover {
+        background: #f9fafb;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      }
+      .members-carousel-btn.prev {
+        left: -6px;
+      }
+      .members-carousel-btn.next {
+        right: -6px;
+      }
+
+      .members-carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 18px;
+      }
+      .members-carousel-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #d1d5db;
+        border: none;
+        padding: 0;
+        transition: 0.25s;
+        cursor: pointer;
+      }
+      .members-carousel-dot.active {
+        background: #2f7a43;
+        width: 28px;
+        border-radius: 8px;
+      }
+
+      /* ---- responsive ---- */
+      @media (max-width: 768px) {
+        .kbcci-arc {
+          width: 180px;
+          height: 180px;
+          opacity: 0.2;
+        }
+        .kbcci-title {
+          font-size: 2rem;
+        }
+        .members-carousel-slide {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .about-img-tall {
+          min-height: 160px;
+        }
+        .service-item {
+          padding: 1.5rem 1rem;
+          min-height: auto;
+        }
+        .service-item .service-img img {
+          height: 80px;
+        }
+        .members-carousel-btn {
+          width: 32px;
+          height: 32px;
+          font-size: 1rem;
+        }
+        .members-carousel-btn.prev {
+          left: -2px;
+        }
+        .members-carousel-btn.next {
+          right: -2px;
+        }
+      }
+      @media (max-width: 480px) {
+        .members-carousel-slide {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
+        .member-logo {
+          min-height: 56px;
+          padding: 10px 4px;
+        }
+        .member-logo img {
+          max-height: 34px;
+        }
+      }
+
+      /* ---- waitlist status bar ---- */
+      #carouselStatus {
+        display: none;
+      }
+
+      /* ---- spinner override ---- */
+      #spinner.show {
+        display: flex !important;
+      }
+    </style>
   </head>
 
   <body>
@@ -250,12 +803,12 @@
           <div class="col-lg-6 position-relative">
             <h1 class="display-1 kbcci-title mb-3 fade-up">
               Connecting
-              <span class="t-primary" style="color: #fff">Kenya</span> &amp;
-              <span class="t-yellow" style="color: #fff">Belgium</span> for
+              <span class="t-primary" style="color: #2f7a43">Kenya</span> &amp;
+              <span class="t-yellow" style="color: #2f7a43">Belgium</span> for
               <span
                 id="kb-typer"
                 class="swap-words"
-                data-words="Trade,Investment,Innovation,Partnerships"
+                data-words="Growth,Trade,Investment,Innovation"
               ></span>
             </h1>
 
@@ -555,7 +1108,6 @@
               />
               <h6 class="partner-name">Olivier Vanden Eynde</h6>
               <p class="partner-title">Chairperson</p>
-              <!-- <p class="partner-org">Kenyan Embassy, Brussels</p> -->
             </div>
           </div>
           <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.25s">
@@ -567,7 +1119,6 @@
               />
               <h6 class="partner-name">Peter Manderick</h6>
               <p class="partner-title">General Manager</p>
-              <!-- <p class="partner-org">Flanders Investment & Trade</p> -->
             </div>
           </div>
           <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
@@ -579,7 +1130,6 @@
               />
               <h6 class="partner-name">Isabel Kanina</h6>
               <p class="partner-title">Policy and Partnerships</p>
-              <!-- <p class="partner-org">Kenya ICT Authority</p> -->
             </div>
           </div>
           <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay="0.55s">
@@ -591,7 +1141,6 @@
               />
               <h6 class="partner-name">Jinane Bouchlaghmi</h6>
               <p class="partner-title">Legal Manager</p>
-              <!-- <p class="partner-org">Brussels Bar Association</p> -->
             </div>
           </div>
         </div>
@@ -992,7 +1541,9 @@
       </div>
     </div>
 
-    <!-- Join Waiting List Modal -->
+    <!-- ============================================================ -->
+    <!-- WAITING LIST MODAL  (with EmailJS integration)               -->
+    <!-- ============================================================ -->
     <div
       class="modal fade"
       id="kbcciWaitlistModal"
@@ -1021,7 +1572,7 @@
                   for="wl-name"
                   class="form-label"
                   style="font-weight: 700; color: #111827"
-                  >Full Name</label
+                  >Full Name *</label
                 >
                 <input
                   id="wl-name"
@@ -1064,7 +1615,7 @@
                   for="wl-email"
                   class="form-label"
                   style="font-weight: 700; color: #111827"
-                  >Email</label
+                  >Email *</label
                 >
                 <input
                   id="wl-email"
@@ -1073,6 +1624,16 @@
                   placeholder="you@company.com"
                   required
                 />
+              </div>
+              <!-- hidden field to track which event -->
+              <input
+                type="hidden"
+                id="wl-event"
+                value="KBCCI Waitlist"
+              />
+              <div class="text-muted small mt-2">
+                <i class="fas fa-lock me-1"></i> Your information will be sent
+                securely to our team.
               </div>
             </div>
 
@@ -1084,8 +1645,9 @@
               >
                 Cancel
               </button>
-              <button type="submit" class="btn btn-submit-waitlist">
-                Submit
+              <button type="submit" class="btn btn-submit-waitlist" id="wlSubmitBtn">
+                <span id="wlSubmitText">Submit</span>
+                <span id="wlSubmitSpinner" class="spinner-border spinner-border-sm ms-2" style="display:none;" role="status"></span>
               </button>
             </div>
           </form>
@@ -1202,22 +1764,562 @@
       <i class="bi bi-arrow-up"></i>
     </a>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- ============================================================ -->
+    <!--  JAVASCRIPT LIBRARIES                                        -->
+    <!-- ============================================================ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="lib/wow/wow.min.js">
+    </script>
+    <script src="lib/easing/easing.min.js">
+    </script>
+    <script src="lib/waypoints/waypoints.min.js">
+    </script>
+    <script src="lib/owlcarousel/owl.carousel.min.js">
+    </script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <!-- ============================================================ -->
+    <!--  EMAILJS SDK  (free client-side email sending)               -->
+    <!-- ============================================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
 
-    <!-- Init WOW (if not already in main.js) -->
+    <!-- ============================================================ -->
+    <!--  MAIN APPLICATION SCRIPT                                     -->
+    <!-- ============================================================ -->
     <script>
-      if (typeof WOW !== "undefined") {
-        new WOW().init();
-      }
+      /**
+       * KBCCI — Master JavaScript
+       * Updated: custom domain email, two-template workflow, auto-reply.
+       */
+      (function() {
+        "use strict";
+
+        // ============================================================
+        //  CONFIGURATION  – replace with your EmailJS credentials
+        // ============================================================
+        const EMAILJS_CONFIG = {
+          PUBLIC_KEY: "YOUR_EMAILJS_PUBLIC_KEY",          // from EmailJS dashboard
+          SERVICE_ID: "YOUR_EMAILJS_SERVICE_ID",          // e.g., "service_abc123"
+          TEMPLATE_ID_ADMIN: "YOUR_ADMIN_TEMPLATE_ID",    // admin notification
+          TEMPLATE_ID_REPLY: "YOUR_REPLY_TEMPLATE_ID",    // user auto-reply
+          TO_EMAIL: "info@kenya-benelux.trade",           // where admin emails go
+          FROM_EMAIL: "info@kenya-benelux.trade",         // sender (must verify domain)
+          FROM_NAME: "KBCCI Team",                        // display name
+        };
+
+        // ============================================================
+        //  DETECT JQUERY & OWL CAROUSEL
+        // ============================================================
+        var hasJQuery = typeof window.jQuery !== "undefined";
+        var hasOwl = hasJQuery && jQuery.fn && jQuery.fn.owlCarousel;
+
+        // ============================================================
+        //  1. BACK TO TOP
+        // ============================================================
+        var backBtn = document.getElementById("backToTop");
+        if (backBtn) {
+          function handleScroll() {
+            if (window.scrollY > 300) {
+              backBtn.classList.add("show");
+            } else {
+              backBtn.classList.remove("show");
+            }
+          }
+          window.addEventListener("scroll", handleScroll, { passive: true });
+          handleScroll();
+
+          backBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+
+        // ============================================================
+        //  2. WOW.JS
+        // ============================================================
+        if (typeof WOW !== "undefined") {
+          new WOW().init();
+        }
+
+        // ============================================================
+        //  3. SPINNER
+        // ============================================================
+        (function() {
+          var spinner = document.getElementById("spinner");
+          if (spinner) {
+            setTimeout(function() {
+              spinner.classList.remove("show");
+            }, 1);
+          }
+        })();
+
+        // ============================================================
+        //  4. STICKY NAVBAR
+        // ============================================================
+        (function() {
+          var sticky = document.querySelector(".sticky-top");
+          if (!sticky) return;
+          var logoNormal = document.getElementById("logoNormal");
+          var logoSticky = document.getElementById("logoSticky");
+
+          function onScrollNav() {
+            if (window.scrollY > 300) {
+              sticky.classList.add("bg-white", "shadow-sm");
+              sticky.style.top = "0px";
+              if (logoNormal) logoNormal.style.display = "none";
+              if (logoSticky) logoSticky.style.display = "block";
+            } else {
+              sticky.classList.remove("bg-white", "shadow-sm");
+              sticky.style.top = "-150px";
+              if (logoNormal) logoNormal.style.display = "block";
+              if (logoSticky) logoSticky.style.display = "none";
+            }
+          }
+          window.addEventListener("scroll", onScrollNav, { passive: true });
+          onScrollNav();
+        })();
+
+        // ============================================================
+        //  5. OWL CAROUSEL
+        // ============================================================
+        function initOwlSafely() {
+          if (!hasJQuery || !jQuery.fn.owlCarousel) return false;
+          jQuery(function($) {
+            if ($(".header-carousel").length) {
+              $(".header-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 24,
+                autoplay: true,
+                autoplayTimeout: 4200,
+                autoplayHoverPause: true,
+                smartSpeed: 1000,
+                dots: true,
+                nav: false,
+              });
+            }
+            if ($(".testimonial-carousel").length) {
+              $(".testimonial-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 30,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                smartSpeed: 1000,
+                animateIn: "fadeIn",
+                animateOut: "fadeOut",
+                dots: true,
+                nav: false,
+              });
+            }
+          });
+          return true;
+        }
+        if (!initOwlSafely()) {
+          window.addEventListener("load", initOwlSafely, { once: true });
+          setTimeout(initOwlSafely, 400);
+        }
+
+        // ============================================================
+        //  6. FADE-UP REVEAL
+        // ============================================================
+        document.addEventListener("DOMContentLoaded", function() {
+          var els = document.querySelectorAll(".fade-up");
+          if (els.length) {
+            var io = new IntersectionObserver(
+              function(entries) {
+                entries.forEach(function(e) {
+                  if (e.isIntersecting) {
+                    e.target.classList.add("in");
+                    io.unobserve(e.target);
+                  }
+                });
+              }, { threshold: 0.15 }
+            );
+            els.forEach(function(el) { io.observe(el); });
+          }
+        });
+
+        // ============================================================
+        //  7. HEADLINE TYPER
+        // ============================================================
+        document.addEventListener("DOMContentLoaded", function() {
+          var el = document.getElementById("kb-typer");
+          if (!el) return;
+          var words = ["Growth", "Trade", "Investment", "Innovation"];
+          var HOLD = 1200,
+            OUT = 350,
+            MAX_CHANGES = 3;
+          var idx = 0,
+            swaps = 0;
+          el.textContent = words[idx];
+
+          function next() {
+            if (swaps >= MAX_CHANGES) return;
+            setTimeout(function() {
+              el.classList.add("is-out");
+              setTimeout(function() {
+                idx = (idx + 1) % words.length;
+                el.textContent = words[idx];
+                el.classList.remove("is-out");
+                swaps++;
+                next();
+              }, OUT);
+            }, HOLD);
+          }
+          next();
+        });
+
+        // ============================================================
+        //  8. FEATURE CARDS HOVER
+        // ============================================================
+        (function() {
+          var wrap = document.getElementById("kbcci-feature-cards");
+          if (!wrap) return;
+          var cards = wrap.querySelectorAll(".feature-card");
+          cards.forEach(function(card) {
+            card.addEventListener("mouseenter", function() {
+              card.style.transform = "translateY(-4px)";
+              card.style.boxShadow = "0 14px 28px rgba(0,0,0,.12)";
+            });
+            card.addEventListener("mouseleave", function() {
+              card.style.transform = "none";
+              card.style.boxShadow = "0 6px 14px rgba(0,0,0,.06)";
+            });
+          });
+        })();
+
+        // ============================================================
+        //  9. MEMBERS CAROUSEL
+        // ============================================================
+        (function() {
+          var track = document.getElementById("membersCarouselTrack");
+          var viewport = document.getElementById("membersCarouselViewport");
+          var dotsContainer = document.getElementById("membersCarouselDots");
+          var prevBtn = document.querySelector(".members-carousel-btn.prev");
+          var nextBtn = document.querySelector(".members-carousel-btn.next");
+          if (!track || !viewport) return;
+
+          var slides = track.querySelectorAll(".members-carousel-slide");
+          var totalSlides = slides.length;
+          var currentIndex = 0;
+          var autoPlayTimer = null;
+          var isAutoPlaying = true;
+          var AUTO_INTERVAL = 4500;
+
+          function goToSlide(index) {
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            currentIndex = index;
+            var offset = index * 100;
+            track.style.transform = "translateX(-" + offset + "%)";
+            document.querySelectorAll(".members-carousel-dot").forEach(function(
+            dot, i) {
+              dot.classList.toggle("active", i === index);
+            });
+          }
+
+          function nextSlide() { goToSlide(currentIndex + 1); }
+
+          function prevSlide() { goToSlide(currentIndex - 1); }
+
+          function buildDots() {
+            dotsContainer.innerHTML = "";
+            for (var i = 0; i < totalSlides; i++) {
+              var dot = document.createElement("button");
+              dot.className = "members-carousel-dot" + (i === currentIndex ?
+                " active" : "");
+              dot.setAttribute("aria-label", "Go to slide " + (i + 1));
+              dot.addEventListener("click", function(idx) {
+                return function() {
+                  goToSlide(idx);
+                  resetAutoPlay();
+                };
+              }(i));
+              dotsContainer.appendChild(dot);
+            }
+          }
+
+          function resetAutoPlay() {
+            if (autoPlayTimer) {
+              clearInterval(autoPlayTimer);
+              autoPlayTimer = null;
+            }
+            if (isAutoPlaying) {
+              autoPlayTimer = setInterval(nextSlide, AUTO_INTERVAL);
+            }
+          }
+
+          buildDots();
+          goToSlide(0);
+
+          prevBtn.addEventListener("click", function() {
+            prevSlide();
+            resetAutoPlay();
+          });
+          nextBtn.addEventListener("click", function() {
+            nextSlide();
+            resetAutoPlay();
+          });
+
+          var wrapper = document.querySelector(".members-carousel-wrapper");
+          wrapper.addEventListener("mouseenter", function() {
+            if (autoPlayTimer) {
+              clearInterval(autoPlayTimer);
+              autoPlayTimer = null;
+            }
+          });
+          wrapper.addEventListener("mouseleave", resetAutoPlay);
+
+          resetAutoPlay();
+
+          // Entrance animation
+          var logos = document.querySelectorAll(".member-logo");
+          if (logos.length) {
+            var observer = new IntersectionObserver(function(entries) {
+              entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("animate");
+                }
+              });
+            }, { threshold: 0.05 });
+            logos.forEach(function(logo) { observer.observe(logo); });
+            setTimeout(function() {
+              logos.forEach(function(logo) {
+                var rect = logo.getBoundingClientRect();
+                var winH = window.innerHeight || document.documentElement
+                  .clientHeight;
+                if (rect.top < winH - 20) {
+                  logo.classList.add("animate");
+                }
+              });
+            }, 100);
+          }
+        })();
+
+        // ============================================================
+        //  10. WAITING LIST FORM  —  TWO EMAILS (Admin + Auto-reply)
+        // ============================================================
+        (function() {
+          var form = document.getElementById("kbcci-waitlist-form");
+          if (!form) return;
+
+          var submitBtn = document.getElementById("wlSubmitBtn");
+          var submitText = document.getElementById("wlSubmitText");
+          var submitSpinner = document.getElementById("wlSubmitSpinner");
+
+          // Check if EmailJS is configured
+          var isEmailJSReady = false;
+          if (typeof emailjs !== "undefined" &&
+              EMAILJS_CONFIG.PUBLIC_KEY &&
+              EMAILJS_CONFIG.PUBLIC_KEY !== "YOUR_EMAILJS_PUBLIC_KEY" &&
+              EMAILJS_CONFIG.SERVICE_ID &&
+              EMAILJS_CONFIG.SERVICE_ID !== "YOUR_EMAILJS_SERVICE_ID" &&
+              EMAILJS_CONFIG.TEMPLATE_ID_ADMIN &&
+              EMAILJS_CONFIG.TEMPLATE_ID_ADMIN !== "YOUR_ADMIN_TEMPLATE_ID" &&
+              EMAILJS_CONFIG.TEMPLATE_ID_REPLY &&
+              EMAILJS_CONFIG.TEMPLATE_ID_REPLY !== "YOUR_REPLY_TEMPLATE_ID") {
+            try {
+              emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+              isEmailJSReady = true;
+              console.log("✅ EmailJS initialized.");
+            } catch (err) {
+              console.warn("⚠️ EmailJS init failed:", err);
+              isEmailJSReady = false;
+            }
+          } else {
+            console.warn("⚠️ EmailJS not fully configured. Check your keys and template IDs.");
+          }
+
+          form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            // Read form fields
+            var name = document.getElementById("wl-name").value.trim();
+            var email = document.getElementById("wl-email").value.trim();
+            var company = document.getElementById("wl-company").value.trim();
+            var phone = document.getElementById("wl-phone").value.trim();
+            var eventName = document.getElementById("wl-event").value || "KBCCI Waitlist";
+
+            if (!name || !email) {
+              alert("Please fill in your name and email.");
+              return;
+            }
+
+            // Disable button and show spinner
+            submitBtn.disabled = true;
+            submitText.textContent = "Sending...";
+            submitSpinner.style.display = "inline-block";
+
+            // --- Admin email data (sent to TO_EMAIL) ---
+            var adminParams = {
+              to_email: EMAILJS_CONFIG.TO_EMAIL,
+              from_email: EMAILJS_CONFIG.FROM_EMAIL,
+              from_name: EMAILJS_CONFIG.FROM_NAME,
+              name: name,
+              email: email,
+              company: company || "Not provided",
+              phone: phone || "Not provided",
+              event: eventName,
+              subject: "New KBCCI Waitlist Submission from " + name,
+              message: "A new user has joined the KBCCI waitlist.\n\n" +
+                       "Name: " + name + "\n" +
+                       "Email: " + email + "\n" +
+                       "Company: " + (company || "Not provided") + "\n" +
+                       "Phone: " + (phone || "Not provided") + "\n" +
+                       "Event: " + eventName + "\n\n" +
+                       "Please follow up with this potential member.",
+            };
+
+            // --- Auto-reply data (sent to the user) ---
+            var replyParams = {
+              to_email: email,                     // user's email
+              from_email: EMAILJS_CONFIG.FROM_EMAIL,
+              from_name: EMAILJS_CONFIG.FROM_NAME,
+              name: name,                          // {{name}}
+              title: eventName,                    // {{title}}
+            };
+
+            if (isEmailJSReady) {
+              // 1) Send admin email
+              emailjs.send(
+                  EMAILJS_CONFIG.SERVICE_ID,
+                  EMAILJS_CONFIG.TEMPLATE_ID_ADMIN,
+                  adminParams
+                )
+                .then(function(response) {
+                  console.log("✅ Admin email sent.", response);
+                  // 2) Send auto-reply to user
+                  return emailjs.send(
+                    EMAILJS_CONFIG.SERVICE_ID,
+                    EMAILJS_CONFIG.TEMPLATE_ID_REPLY,
+                    replyParams
+                  );
+                })
+                .then(function(response) {
+                  console.log("✅ Auto-reply sent to user.", response);
+                  // Success: close modal, show success message, reset form
+                  var modalEl = document.getElementById("kbcciWaitlistModal");
+                  if (modalEl) {
+                    var modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+                    modal.hide();
+                  }
+                  setTimeout(function() {
+                    alert("✅ Thank you! You're on the waiting list. A confirmation email has been sent to you.");
+                  }, 200);
+                  form.reset();
+                })
+                .catch(function(error) {
+                  console.error("❌ EmailJS error:", error);
+                  alert(
+                    "❌ Something went wrong sending your request. Please try again or contact us directly.\n\nError: " +
+                    (error.text || error.message || "Unknown error")
+                  );
+                })
+                .finally(function() {
+                  submitBtn.disabled = false;
+                  submitText.textContent = "Submit";
+                  submitSpinner.style.display = "none";
+                });
+            } else {
+              // Fallback when EmailJS not configured
+              console.warn("⚠️ EmailJS not configured. Showing fallback alert.");
+              alert(
+                "📩 Waitlist submission received!\n\n" +
+                "Name: " + name + "\n" +
+                "Email: " + email + "\n" +
+                "Company: " + (company || "Not provided") + "\n" +
+                "Phone: " + (phone || "Not provided") + "\n\n" +
+                "⚠️ EmailJS is not configured. To send actual emails, set your credentials in the EMAILJS_CONFIG object."
+              );
+              var modalEl2 = document.getElementById("kbcciWaitlistModal");
+              if (modalEl2) {
+                var modal2 = bootstrap.Modal.getInstance(modalEl2) || new bootstrap.Modal(modalEl2);
+                modal2.hide();
+              }
+              form.reset();
+              submitBtn.disabled = false;
+              submitText.textContent = "Submit";
+              submitSpinner.style.display = "none";
+            }
+          });
+
+          // Reset button state if modal is closed without submitting
+          var modalEl = document.getElementById("kbcciWaitlistModal");
+          if (modalEl) {
+            modalEl.addEventListener("hidden.bs.modal", function() {
+              submitBtn.disabled = false;
+              submitText.textContent = "Submit";
+              submitSpinner.style.display = "none";
+            });
+          }
+        })();
+
+        // ============================================================
+        //  11. MAP SWITCHER  (contact page)
+        // ============================================================
+        (function() {
+          var iframe = document.getElementById("kbcci-map");
+          var openLink = document.getElementById("open-maps");
+          if (!iframe || !openLink) return;
+          var external = {
+            brussels: "https://maps.google.com/maps/place//data=!4m2!3m1!1s0x47c3c37da28e74df:0xee2bd0b1095e7611?entry=s&sa=X&ved=2ahUKEwiS8YzAvICQAxXkwAIHHaXBK3kQ4kB6BAgbEAA",
+            mombasa: "https://maps.app.goo.gl/2E4ytFk56815cAod7",
+          };
+          var embeds = {
+            brussels: "https://www.google.com/maps?q=Montjoielaan%20293%20bus%2012%2C%201180%20Brussels%2C%20Belgium%20(Kifaru%20Tech%20%26%20Bed)&output=embed",
+            mombasa: "https://www.google.com/maps?q=Ratna%20Square%2C%20Nyali%2C%20Mombasa%2C%20Kenya&output=embed",
+          };
+          document.addEventListener("click", function(e) {
+            var btn = e.target.closest("[data-map]");
+            if (!btn) return;
+            var city = btn.getAttribute("data-map");
+            if (embeds[city]) iframe.src = embeds[city];
+            if (external[city]) openLink.href = external[city];
+          });
+        })();
+
+        // ============================================================
+        //  12. PULSE KEYFRAMES FALLBACK
+        // ============================================================
+        (function() {
+          if (!document.getElementById("backToTop")) return;
+          var existing = false;
+          try {
+            var sheets = document.styleSheets;
+            for (var i = 0; i < sheets.length; i++) {
+              var rules = sheets[i].cssRules || sheets[i].rules;
+              if (rules) {
+                for (var j = 0; j < rules.length; j++) {
+                  if (rules[j].name === "pulse") { existing = true; break; }
+                }
+              }
+              if (existing) break;
+            }
+          } catch (e) { /* ignore cross-origin */ }
+          if (!existing) {
+            var style = document.createElement("style");
+            style.textContent =
+              "@keyframes pulse { 0%, 100% { filter: none; } 50% { filter: brightness(1.08); } }";
+            document.head.appendChild(style);
+          }
+        })();
+
+        console.log("✅ KBCCI application loaded.");
+        console.log("📧 Admin emails will be sent to: " + EMAILJS_CONFIG.TO_EMAIL);
+        console.log("📧 Auto-reply will be sent from: " + EMAILJS_CONFIG.FROM_EMAIL);
+        if (EMAILJS_CONFIG.PUBLIC_KEY === "YOUR_EMAILJS_PUBLIC_KEY") {
+          console.warn("⚠️ EmailJS is not configured. Please update the EMAILJS_CONFIG object with your credentials.");
+        }
+      })();
+    </script>
+
+    <!-- Template Javascript fallback (minimal) -->
+    <script src="js/main.js">
     </script>
   </body>
 </html>
