@@ -55,23 +55,49 @@
   // ==============================================================
   //  4. STICKY NAVBAR  (from theme)
   // ==============================================================
-  (function () {
-    var sticky = document.querySelector(".sticky-top");
-    if (!sticky) return;
-    var originalTop = sticky.style.top || "0px";
+    (function() {
+        var sticky = document.querySelector(".sticky-top");
+        if (!sticky) return;
 
-    function onScrollNav() {
-      if (window.scrollY > 300) {
-        sticky.classList.add("bg-white", "shadow-sm");
-        sticky.style.top = "0px";
-      } else {
-        sticky.classList.remove("bg-white", "shadow-sm");
-        sticky.style.top = "-150px";
-      }
-    }
-    window.addEventListener("scroll", onScrollNav, { passive: true });
-    onScrollNav(); // set initial state
-  })();
+        var logoNormal = document.getElementById("logoNormal");
+        var logoSticky = document.getElementById("logoSticky");
+
+        function onScrollNav() {
+            if (window.scrollY > 300) {
+                // Sticky state — show sticky logo, hide normal
+                sticky.classList.add("bg-white", "shadow-sm");
+                sticky.style.top = "0px";
+                if (logoNormal) logoNormal.style.display = "none";
+                if (logoSticky) logoSticky.style.display = "block";
+            } else {
+                // Normal state — show normal logo, hide sticky
+                sticky.classList.remove("bg-white", "shadow-sm");
+                sticky.style.top = "-150px";
+                if (logoNormal) logoNormal.style.display = "block";
+                if (logoSticky) logoSticky.style.display = "none";
+            }
+        }
+
+        window.addEventListener("scroll", onScrollNav, { passive: true });
+        onScrollNav(); // set initial state
+    })();
+  // (function () {
+  //   var sticky = document.querySelector(".sticky-top");
+  //   if (!sticky) return;
+  //   var originalTop = sticky.style.top || "0px";
+
+  //   function onScrollNav() {
+  //     if (window.scrollY > 300) {
+  //       sticky.classList.add("bg-white", "shadow-sm");
+  //       sticky.style.top = "0px";
+  //     } else {
+  //       sticky.classList.remove("bg-white", "shadow-sm");
+  //       sticky.style.top = "-150px";
+  //     }
+  //   }
+  //   window.addEventListener("scroll", onScrollNav, { passive: true });
+  //   onScrollNav(); // set initial state
+  // })();
 
   // ==============================================================
   //  5. OWL CAROUSEL INIT  (safe, jQuery dependent)

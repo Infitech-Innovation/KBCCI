@@ -190,10 +190,20 @@
     <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">
+          <!-- Normal logo (shown before scroll) -->
+          <img
+            src="img/Proposed-Logo.png"
+            alt="KBCCI logo"
+            class="kbcci-logo"
+            id="logoNormal"
+          />
+          <!-- Sticky logo (shown after scroll) -->
           <img
             src="https://fx.iguanyalabs.com/images/kbcci/logo/kbcci-logo1.png"
             alt="KBCCI logo"
-            class="kbcci-logo"
+            class="kbcci-logo2"
+            id="logoSticky"
+            style="display: none"
           />
         </a>
         <button
@@ -240,8 +250,8 @@
           <div class="col-lg-6 position-relative">
             <h1 class="display-1 kbcci-title mb-3 fade-up">
               Connecting
-              <span class="t-primary" style="color: #c43a34">Kenya</span> &amp;
-              <span class="t-yellow">Belgium</span> for
+              <span class="t-primary" style="color: #2f7a43">Kenya</span> &amp;
+              <span class="t-yellow" style="color: #2f7a43">Belgium</span> for
               <span
                 id="kb-typer"
                 class="swap-words"
@@ -250,10 +260,8 @@
             </h1>
 
             <p class="kbcci-sub fade-up">
-              A member-led platform that helps companies meet the right
-              partners, understand the market, and move faster across borders —
-              through membership, warm introductions, market briefings, and
-              well-run trade missions.
+              The Kenya-Benelux Chamber bridges borders one partnership,one
+              introduction,one deal at a time.Connect once,trade forever.
             </p>
 
             <div class="d-flex flex-wrap gap-2 fade-up">
@@ -858,7 +866,10 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <div class="testimonial-text pb-5 pb-md-0">
+                    <div
+                      class="testimonial-text pb-5 pb-md-0"
+                      style="filter: blur(4px)"
+                    >
                       <h3>KBCCI B2B Matchmaking Night</h3>
                       <p>
                         Date: TBA • Location: Brussels • Focus: Trade &
@@ -900,7 +911,10 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <div class="testimonial-text pb-5 pb-md-0">
+                    <div
+                      class="testimonial-text pb-5 pb-md-0"
+                      style="filter: blur(4px)"
+                    >
                       <h3>EU Standards & Compliance Briefing</h3>
                       <p>
                         Date: TBA • Location: Hybrid (KE ↔ BE) • Focus:
@@ -942,7 +956,10 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <div class="testimonial-text pb-5 pb-md-0">
+                    <div
+                      class="testimonial-text pb-5 pb-md-0"
+                      style="filter: blur(4px)"
+                    >
                       <h3>KBCCI Trade Mission</h3>
                       <p>
                         Date: TBA • Location: Belgium & Netherlands • Focus:
@@ -1106,9 +1123,6 @@
               <i class="fa fa-map-marker-alt me-3"></i>
               Brussels, Belgium
             </p>
-            <p class="mb-2">
-              <i class="fa fa-phone-alt me-3"></i>+32478284084,+254759500115
-            </p>
             <p class="mb-0">
               <i class="fa fa-envelope me-3"></i>info@kenya-benelux.trade
             </p>
@@ -1119,7 +1133,7 @@
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener"
-                style="border-color: rgba(241, 184, 16, 0.6); color: #f1b810"
+                style="border-color: rgba(47, 122, 67, 0.6); color: #2f7a43"
               >
                 <i class="fab fa-facebook-f"></i>
               </a>
@@ -1129,7 +1143,7 @@
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener"
-                style="border-color: rgba(196, 58, 52, 0.6); color: #c43a34"
+                style="border-color: rgba(47, 122, 67, 0.6); color: #2f7a43"
               >
                 <i class="fab fa-instagram"></i>
               </a>

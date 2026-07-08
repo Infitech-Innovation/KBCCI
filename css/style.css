@@ -259,7 +259,16 @@ body {
   margin-bottom: 8px;
   color: #e6e9ee;
 }
+#logoNormal {
+  margin-top: -60px;
+  margin-bottom: -30px;
+}
 .kbcci-logo {
+  width: 120px;
+  height: auto;
+}
+
+.kbcci-logo2 {
   width: 120px;
   height: auto;
 }
@@ -350,7 +359,7 @@ body {
 .hero-header .header-carousel .item img {
   display: block;
   width: 100%;
-  height: 600px;
+  height: 700px;
   border-radius: 14px;
   object-fit: cover;
 }
@@ -365,7 +374,7 @@ body {
 .hero-header .header-carousel .caption {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 80%;
   transform: translate(-50%, calc(-50% + 8px));
   width: min(92%, 680px);
   text-align: center;
@@ -733,8 +742,8 @@ body {
   background: linear-gradient(
     90deg,
     var(--kbcci-green),
-    var(--kbcci-yellow),
-    var(--kbcci-red)
+    var(--kbcci-green),
+    var(--kbcci-green)
   );
   transform-origin: left;
   transform: scaleX(0);
@@ -853,7 +862,7 @@ body {
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, var(--kbcci-green), var(--kbcci-yellow));
+  background: linear-gradient(90deg, var(--kbcci-green), var(--kbcci-green));
   border-radius: 2px;
 }
 .kbcci-why .about-lead {
@@ -899,8 +908,8 @@ body {
   color: #fff;
   transition: 0.5s;
 }
-.service-item.bg-primary:hover p {
-  color: #111;
+.service-item.bg-primary:hover h3 {
+  color: var(--kbcci-yellow);
 }
 .service-item.bg-light {
   background: #f7f7fa !important;
@@ -914,6 +923,9 @@ body {
 }
 .service-item.bg-light:hover p {
   color: #111;
+}
+.service-item.bg-light:hover h3 {
+  color: var(--kbcci-yellow);
 }
 .service-item .service-img h3 {
   position: absolute;
@@ -1163,8 +1175,8 @@ body {
   background: linear-gradient(
     90deg,
     var(--kbcci-green),
-    var(--kbcci-yellow),
-    var(--kbcci-red)
+    var(--kbcci-green),
+    var(--kbcci-green)
   );
   border-radius: 4px;
   transform: scaleX(0);
@@ -1476,6 +1488,7 @@ body {
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(8px);
   border-radius: 18px;
+
   box-shadow:
     0 18px 34px rgba(0, 0, 0, 0.25),
     inset 0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -1487,6 +1500,7 @@ body {
   gap: 0.6rem;
   color: #fff;
   margin: 0.35rem 0;
+  border-radius: 50%;
 }
 .hero-panel-item i {
   width: 1.2rem;
@@ -1573,50 +1587,267 @@ body {
 .kb-card p {
   color: #4b5563;
 }
+/* ============================================================
+   KB STEPPER — Fully responsive step process
+   ============================================================ */
 
-.kb-step {
-  height: 100%;
-  background: #fff;
-  border: 1px solid rgba(17, 24, 39, 0.08);
-  border-radius: 14px;
-  padding: 18px;
+/* ── wrapper: flex container for steps + arrows ── */
+.kb-step-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
+/* ── each step item ── */
+.kb-step-item {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  padding: 12px 8px;
+  width: 160px;
 }
-.kb-step:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.12);
-}
-.kb-step-number {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
+
+/* ── step circle ── */
+.kb-step-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid rgba(17, 24, 39, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 10px;
-  font-weight: 800;
+  font-size: 2rem;
+  font-weight: 900;
   color: #fff;
+  margin-bottom: 12px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  flex-shrink: 0;
 }
-.step-green {
+.kb-step-item:hover .kb-step-circle {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+}
+.step-green .kb-step-circle {
   background: #2f7a43;
+  border-color: #2f7a43;
 }
-.step-yellow {
+.step-yellow .kb-step-circle {
   background: #f1b810;
+  border-color: #f1b810;
   color: #111;
 }
-.step-red {
+.step-red .kb-step-circle {
   background: #c43a34;
+  border-color: #c43a34;
 }
-.kb-step h6 {
+
+/* ── step text ── */
+.kb-step-item h6 {
   font-weight: 800;
   color: #111827;
+  margin: 0 0 4px 0;
+  font-size: 1rem;
 }
-.kb-step p {
+.kb-step-item p {
   color: #4b5563;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  margin: 0;
+  max-width: 140px;
+  line-height: 1.4;
+}
+
+/* ── arrow between steps ── */
+.kb-step-arrow {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2f7a43;
+  font-size: 1.6rem;
+  padding: 0 4px;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+  width: 44px;
+}
+.kb-step-arrow i {
+  display: block;
+  line-height: 1;
+}
+.kb-step-arrow:hover {
+  color: #f1b810;
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* Desktop / Laptop (≥ 992px): 4 steps in a row */
+@media (min-width: 992px) {
+  .kb-step-wrapper {
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+  .kb-step-item {
+    width: 180px;
+    padding: 12px 6px;
+  }
+  .kb-step-circle {
+    width: 50px; /* ← reduced */
+    height: 50px; /* ← reduced */
+    font-size: 1.2rem;
+  }
+  .kb-step-arrow {
+    font-size: 1.8rem;
+    width: 50px;
+  }
+}
+
+/* Tablet (768–991px): 2 steps per row, arrows down */
+@media (min-width: 768px) and (max-width: 991px) {
+  .kb-step-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 0;
+    max-width: 640px;
+  }
+  .kb-step-item {
+    width: 44%;
+    padding: 12px 8px;
+  }
+  .kb-step-circle {
+    width: 90px;
+    height: 90px;
+    font-size: 1.8rem;
+  }
+  .kb-step-arrow {
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 2px 0;
+    transform: rotate(90deg);
+    color: #2f7a43;
+    opacity: 0.7;
+  }
+  .kb-step-arrow:hover {
+    transform: rotate(90deg) translateY(4px);
+  }
+  .kb-step-wrapper .kb-step-arrow:last-of-type {
+    display: none;
+  }
+  /* reorder for 2-column layout */
+  .kb-step-wrapper .kb-step-item:nth-child(2) {
+    order: 3;
+  }
+  .kb-step-wrapper .kb-step-arrow:nth-child(2) {
+    order: 2;
+  }
+  .kb-step-wrapper .kb-step-item:nth-child(3) {
+    order: 5;
+  }
+  .kb-step-wrapper .kb-step-arrow:nth-child(3) {
+    order: 4;
+  }
+  .kb-step-wrapper .kb-step-item:nth-child(4) {
+    order: 7;
+  }
+  .kb-step-wrapper .kb-step-arrow:nth-child(4) {
+    order: 6;
+  }
+  .kb-step-wrapper .kb-step-item:nth-child(5) {
+    order: 8;
+  }
+  .kb-step-wrapper .kb-step-arrow:nth-child(5) {
+    display: none;
+  }
+}
+
+/* Mobile (≤ 767px): stacked vertically, arrows down */
+@media (max-width: 767px) {
+  .kb-step-wrapper {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+    max-width: 340px;
+  }
+  .kb-step-item {
+    width: 100%;
+    padding: 10px 8px;
+    flex-direction: row;
+    text-align: left;
+    gap: 16px;
+    align-items: center;
+  }
+  .kb-step-circle {
+    width: 72px;
+    height: 72px;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  .kb-step-item h6 {
+    font-size: 0.95rem;
+    margin: 0 0 2px 0;
+  }
+  .kb-step-item p {
+    font-size: 0.8rem;
+    max-width: 100%;
+  }
+  .kb-step-item .step-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .kb-step-arrow {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 0 0 2px 0;
+    transform: rotate(90deg);
+    color: #2f7a43;
+    opacity: 0.6;
+  }
+  .kb-step-arrow:hover {
+    transform: rotate(90deg) translateY(3px);
+  }
+  .kb-step-wrapper .kb-step-arrow:last-of-type {
+    display: none;
+  }
+}
+
+/* Small mobile (≤ 400px): tighter spacing */
+@media (max-width: 400px) {
+  .kb-step-item {
+    padding: 8px 4px;
+    gap: 12px;
+  }
+  .kb-step-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+  .kb-step-item h6 {
+    font-size: 0.85rem;
+  }
+  .kb-step-item p {
+    font-size: 0.75rem;
+  }
+  .kb-step-arrow {
+    font-size: 1rem;
+    padding: 0;
+  }
 }
 
 .kb-package {
@@ -2219,20 +2450,30 @@ body {
   font-weight: 600;
 }
 .kbcci-footer .social-icons .btn {
-  border-color: rgba(241, 184, 16, 0.6);
-  color: #f1b810;
+  border-color: rgba(47, 122, 67, 0.6);
+  color: #2f7a43;
 }
-.kbcci-footer .social-icons .btn:hover {
+.kbcci-footer .social-icons .btn {
+  /* border-color: rgba(241, 184, 16, 0.6);
+  color: #f1b810; */
+  border-color: rgba(47, 122, 67, 0.6);
+  color: #2f7a43;
+}
+/* .kbcci-footer .social-icons .btn:hover {
   background: #f1b810;
   color: #0b1110;
-}
+} */
 .social-facebook {
-  border-color: rgba(241, 184, 16, 0.6) !important;
-  color: #f1b810 !important;
+  /* border-color: rgba(241, 184, 16, 0.6) !important;
+  color: #f1b810 !important; */
+  border-color: rgba(47, 122, 67, 0.6) !important;
+  color: #2f7a43 !important;
 }
 .social-instagram {
-  border-color: rgba(196, 58, 52, 0.6) !important;
-  color: #c43a34 !important;
+  /* border-color: rgba(196, 58, 52, 0.6) !important;
+  color: #c43a34 !important; */
+  border-color: rgba(47, 122, 67, 0.6) !important;
+  color: #2f7a43 !important;
 }
 .social-linkedin {
   border-color: rgba(47, 122, 67, 0.6) !important;
@@ -2343,5 +2584,202 @@ body {
   }
   .about-img-tall {
     height: 360px !important;
+  }
+}
+
+/* ---------- Grid Layout: two hexagons side‑by‑side ---------- */
+.hex-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  justify-items: center;
+}
+
+/* ---------- Each Hexagon Stack ---------- */
+.hex-stack {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1.1547;
+  /* width : height for regular hexagon */
+}
+
+/* ---------- Hexagon Item ---------- */
+.hex-item {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  overflow: hidden;
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 0.4s ease,
+    box-shadow 0.4s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* ---- Top hexagon: sits at the top ---- */
+.hex-top {
+  top: 0;
+  z-index: 2;
+  transform: translateY(0);
+}
+
+/* ---- Bottom hexagon: starts 45% down from the top ---- */
+.hex-bottom {
+  top: 60%;
+  /* 45% overlap with the top hexagon */
+  z-index: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Images inside hexagons ---------- */
+.hex-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 0.5s ease;
+}
+
+/* ---------- Hover Effects ---------- */
+.hex-stack:hover .hex-top {
+  transform: translateY(-4%) scale(1.02);
+  filter: brightness(1.08) saturate(1.05);
+  z-index: 4;
+}
+
+.hex-stack:hover .hex-bottom {
+  transform: translateY(4%) scale(1.02);
+  filter: brightness(1.08) saturate(1.05);
+  z-index: 3;
+}
+
+.hex-stack:hover .hex-top img {
+  transform: scale(1.06);
+}
+
+.hex-stack:hover .hex-bottom img {
+  transform: scale(1.06);
+}
+
+/* ---------- Shadow & Glow ---------- */
+.hex-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  box-shadow: inset 0 0 30px rgba(255, 215, 0, 0);
+  opacity: 0;
+}
+
+.hex-stack:hover .hex-item::after {
+  opacity: 1;
+  box-shadow: inset 0 0 40px rgba(255, 215, 0, 0.08);
+}
+
+.hex-item::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: transparent;
+  z-index: -1;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.hex-stack:hover .hex-item::before {
+  opacity: 0.6;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 215, 0, 0.15),
+    transparent 70%
+  );
+  filter: blur(12px);
+}
+
+/* ---------- Decorative shine ---------- */
+.hex-item .shine {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.04) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.hex-stack:hover .hex-item .shine {
+  opacity: 1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hex-grid {
+    gap: 1rem;
+  }
+
+  .hex-stack {
+    max-width: 240px;
+  }
+  .hex-bottom {
+    top: 0;
+  }
+}
+@media (max-width: 700px) {
+  .hex-grid {
+    gap: 1rem;
+  }
+
+  .hex-stack {
+    max-width: 240px;
+  }
+  .hex-bottom {
+    top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hex-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hex-stack {
+    max-width: 280px;
+  }
+
+  .kbcci-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ---------- Accessibility / reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .hex-item,
+  .hex-item img,
+  .hex-stack:hover .hex-top,
+  .hex-stack:hover .hex-bottom,
+  .hex-item::after,
+  .hex-item::before,
+  .hex-item .shine {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }

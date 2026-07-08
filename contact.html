@@ -72,19 +72,27 @@
     </div>
     <!-- Spinner End -->
 
+   
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
       <div class="container">
-        <!-- Logo -->
         <a class="navbar-brand" href="index.html">
+          <!-- Normal logo (shown before scroll) -->
+          <img
+            src="img/Proposed-Logo.png"
+            alt="KBCCI logo"
+            class="kbcci-logo"
+            id="logoNormal"
+          />
+          <!-- Sticky logo (shown after scroll) -->
           <img
             src="https://fx.iguanyalabs.com/images/kbcci/logo/kbcci-logo1.png"
             alt="KBCCI logo"
-            class="kbcci-logo"
+            class="kbcci-logo2"
+            id="logoSticky"
+            style="display: none"
           />
         </a>
-
-        <!-- Mobile Toggler -->
         <button
           class="navbar-toggler ms-auto me-0"
           type="button"
@@ -96,12 +104,10 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Nav Links -->
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
+              <a href="index.html" class="nav-link active">Home</a>
             </li>
             <li class="nav-item">
               <a href="about.html" class="nav-link">About</a>
@@ -110,14 +116,14 @@
               <a href="membership.html" class="nav-link">Membership</a>
             </li>
             <li class="nav-item">
-              <a href="contact.html" class="nav-link active">Contact</a>
+              <a href="contact.html" class="nav-link">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <!-- Navbar End -->
-
+     
     <!-- Contact Hero Start -->
     <div class="container-fluid pb-5 hero-header kbcci-contact-hero">
       <!-- soft dark veil -->
@@ -155,9 +161,6 @@
             <div class="hero-chips">
               <a href="mailto:info@kenya-benelux.trade" class="chip chip-green">
                 <i class="fa-solid fa-envelope"></i>info@kenya-benelux.trade
-              </a>
-              <a href="tel:+32470317413" class="chip chip-yellow">
-                <i class="fa-solid fa-phone"></i> +32478284084,+254759500115
               </a>
               <span class="chip chip-red">
                 <i class="fa-solid fa-location-dot"></i> Brussels
@@ -289,10 +292,6 @@
                   <i class="fa fa-envelope" style="color: #2f7a43"></i>
                   info@kenya-benelux.trade
                 </a>
-                <a href="tel:+32470317413" class="map-footer-chip">
-                  <i class="fa fa-phone" style="color: #f1b810"></i>
-                  +32478284084,+254759500115
-                </a>
                 <a
                   id="open-maps"
                   href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x47c3c37da28e74df:0xee2bd0b1095e7611?entry=s&sa=X&ved=2ahUKEwiS8YzAvICQAxXkwAIHHXaBK3kQ4kB6BAgbEAA"
@@ -336,9 +335,6 @@
             <p class="mb-2">
               <i class="fa fa-map-marker-alt me-3"></i>
               Brussels, Belgium
-            </p>
-            <p class="mb-2">
-              <i class="fa fa-phone-alt me-3"></i>+32478284084,+254759500115
             </p>
             <p class="mb-0">
               <i class="fa fa-envelope me-3"></i>info@kenya-benelux.trade

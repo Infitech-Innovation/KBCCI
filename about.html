@@ -72,19 +72,27 @@
     </div>
     <!-- Spinner End -->
 
+  
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
       <div class="container">
-        <!-- Logo -->
         <a class="navbar-brand" href="index.html">
+          <!-- Normal logo (shown before scroll) -->
+          <img
+            src="img/Proposed-Logo.png"
+            alt="KBCCI logo"
+            class="kbcci-logo"
+            id="logoNormal"
+          />
+          <!-- Sticky logo (shown after scroll) -->
           <img
             src="https://fx.iguanyalabs.com/images/kbcci/logo/kbcci-logo1.png"
             alt="KBCCI logo"
-            class="kbcci-logo"
+            class="kbcci-logo2"
+            id="logoSticky"
+            style="display: none"
           />
         </a>
-
-        <!-- Mobile Toggler -->
         <button
           class="navbar-toggler ms-auto me-0"
           type="button"
@@ -96,15 +104,13 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Nav Links -->
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
+              <a href="index.html" class="nav-link active">Home</a>
             </li>
             <li class="nav-item">
-              <a href="about.html" class="nav-link active">About</a>
+              <a href="about.html" class="nav-link">About</a>
             </li>
             <li class="nav-item">
               <a href="membership.html" class="nav-link">Membership</a>
@@ -127,7 +133,7 @@
         <div class="row g-3 align-items-center">
           <div class="col-lg-6 text-center text-lg-start">
             <span class="kbcci-badge animated fadeInDown">Who We Are</span>
-            <h1 class="display-1 mb-2 animated slideInLeft" style="color: red">
+            <h1 class="display-1 mb-2 animated slideInLeft" style="color:#fff">
               About <span class="grad-underline">KBCCI</span>
             </h1>
             <p class="lead mb-0 animated fadeInUp">
@@ -144,57 +150,34 @@
     <!-- About Start -->
     <div class="container-fluid py-5">
       <div class="container py-5">
-        <div class="row g-5">
+        <div class="row g-4">
           <!-- LEFT: image collage + two mini-cards -->
           <div class="col-lg-6">
-            <div class="row about-grid">
-              <div
-                class="col-6 wow fadeIn"
-                data-wow-delay="0.1s"
-                data-wow-duration="0.8s"
-              >
-                <div class="about-img about-img-tall">
+            <!-- Two hexagon columns side‑by‑side -->
+            <div class="hex-grid">
+              <!-- ===== LEFT HEXAGON STACK ===== -->
+              <div class="hex-stack">
+                <!-- Top hexagon (image) -->
+                <div class="hex-item hex-top">
                   <img
-                    class="img-fluid"
-                    src="https://fx.iguanyalabs.com/images/kbcci/images/img10.jpeg"
-                    alt="KBCCI - Kenya Benelux EU Chamber"
+                    src="https://fx.iguanyalabs.com/images/kbcci/images/img9.jpeg"
+                    alt="KBCCI event image – Kenya Benelux EU Chamber"
+                    loading="lazy"
                   />
+                  <div class="shine"></div>
                 </div>
               </div>
 
-              <div
-                class="col-6 wow fadeIn"
-                data-wow-delay="0.3s"
-                data-wow-duration="0.8s"
-              >
-                <div class="about-img about-img-logo">
+              <!-- ===== RIGHT HEXAGON STACK (mirror layout) ===== -->
+              <div class="hex-stack">
+                <!-- Bottom hexagon (image) – overlaps top by 45% -->
+                <div class="hex-item hex-bottom">
                   <img
-                    class="img-fluid"
-                    src="https://fx.iguanyalabs.com/images/kbcci/logo/kbcci-logo1.png"
-                    alt="KBCCI Brussels HQ"
+                    src="https://fx.iguanyalabs.com/images/kbcci/images/img10.jpeg"
+                    alt="KBCCI event image – Kenya Benelux EU Chamber"
+                    loading="lazy"
                   />
-                </div>
-
-                <div
-                  class="mini-card mini-card-green wow fadeInUp"
-                  data-wow-delay="0.45s"
-                >
-                  <i class="fa-solid fa-handshake"></i>
-                  <p>
-                    Offering guidance and building trust between business
-                    communities.
-                  </p>
-                </div>
-
-                <div
-                  class="mini-card mini-card-yellow wow fadeInUp"
-                  data-wow-delay="0.55s"
-                >
-                  <i class="fa-solid fa-people-group"></i>
-                  <p>
-                    Networking &amp; Growth – Hosting events, forums, and
-                    matchmaking to support expansion.
-                  </p>
+                  <div class="shine"></div>
                 </div>
               </div>
             </div>
@@ -241,13 +224,13 @@
                   chamber in Europe
                 </h6>
                 <h6 class="mb-0">
-                  <i class="fa fa-check me-2 check-yellow"></i>Non-profit &amp;
+                  <i class="fa fa-check me-2 check-green"></i>Non-profit &amp;
                   membership-based
                 </h6>
               </div>
               <div class="col-sm-6">
                 <h6 class="mb-3">
-                  <i class="fa fa-check me-2 check-red"></i>Headquarters in
+                  <i class="fa fa-check me-2 check-green"></i>Headquarters in
                   Brussels
                 </h6>
                 <h6 class="mb-0">
@@ -443,38 +426,38 @@
               <i class="fa fa-map-marker-alt me-3"></i>
               Brussels, Belgium
             </p>
-            <p class="mb-2">
-              <i class="fa fa-phone-alt me-3"></i>+32478284084,+254759500115
-            </p>
             <p class="mb-0">
               <i class="fa fa-envelope me-3"></i>info@kenya-benelux.trade
             </p>
 
             <div class="d-flex pt-3 social-icons">
               <a
-                class="btn btn-outline-primary btn-square border-2 me-2 social-facebook"
+                class="btn btn-outline-primary btn-square border-2 me-2"
                 href="https://www.facebook.com/profile.php?id=61580810310268"
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener"
+                style="border-color: rgba(47, 122, 67, 0.6); color: #2f7a43"
               >
                 <i class="fab fa-facebook-f"></i>
               </a>
               <a
-                class="btn btn-outline-primary btn-square border-2 me-2 social-instagram"
+                class="btn btn-outline-primary btn-square border-2 me-2"
                 href="https://www.instagram.com/kenyabeneluxtrade/"
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener"
+                style="border-color: rgba(47, 122, 67, 0.6); color: #2f7a43"
               >
                 <i class="fab fa-instagram"></i>
               </a>
               <a
-                class="btn btn-outline-primary btn-square border-2 me-2 social-linkedin"
+                class="btn btn-outline-primary btn-square border-2 me-2"
                 href="https://www.linkedin.com/company/111980159/admin/dashboard/"
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noopener"
+                style="border-color: rgba(47, 122, 67, 0.6); color: #2f7a43"
               >
                 <i class="fab fa-linkedin-in"></i>
               </a>

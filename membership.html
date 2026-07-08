@@ -62,14 +62,24 @@
       </div>
     </div>
 
-    <!-- Navbar Start (same as before) -->
+    <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">
+          <!-- Normal logo (shown before scroll) -->
+          <img
+            src="img/Proposed-Logo.png"
+            alt="KBCCI logo"
+            class="kbcci-logo"
+            id="logoNormal"
+          />
+          <!-- Sticky logo (shown after scroll) -->
           <img
             src="https://fx.iguanyalabs.com/images/kbcci/logo/kbcci-logo1.png"
             alt="KBCCI logo"
-            class="kbcci-logo"
+            class="kbcci-logo2"
+            id="logoSticky"
+            style="display: none"
           />
         </a>
         <button
@@ -86,13 +96,13 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a href="index.html" class="nav-link">Home</a>
+              <a href="index.html" class="nav-link active">Home</a>
             </li>
             <li class="nav-item">
               <a href="about.html" class="nav-link">About</a>
             </li>
             <li class="nav-item">
-              <a href="membership.html" class="nav-link active">Membership</a>
+              <a href="membership.html" class="nav-link">Membership</a>
             </li>
             <li class="nav-item">
               <a href="contact.html" class="nav-link">Contact</a>
@@ -222,39 +232,71 @@
           </p>
         </div>
 
-        <div class="row g-4 align-items-stretch">
-          <div class="col-md-3 col-6 wow fadeInUp" data-wow-delay="0.05s">
-            <div class="kb-step">
-              <div class="kb-step-number step-green">1</div>
-              <h6>Submit Interest</h6>
-              <p>Tell us about your org &amp; goals.</p>
-            </div>
-          </div>
-          <div class="col-md-3 col-6 wow fadeInUp" data-wow-delay="0.10s">
-            <div class="kb-step">
-              <div class="kb-step-number step-yellow">2</div>
-              <h6>Short Call</h6>
-              <p>We align on membership fit.</p>
-            </div>
-          </div>
-          <div class="col-md-3 col-6 wow fadeInUp" data-wow-delay="0.15s">
-            <div class="kb-step">
-              <div class="kb-step-number step-red">3</div>
-              <h6>Onboarding</h6>
-              <p>Sign-up &amp; access member hub.</p>
-            </div>
-          </div>
-          <div class="col-md-3 col-6 wow fadeInUp" data-wow-delay="0.20s">
-            <div class="kb-step">
-              <div class="kb-step-number step-green">4</div>
-              <h6>Activate</h6>
-              <p>Get intros, briefs &amp; invites.</p>
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="kb-step-wrapper">
+              <!-- Step 1 -->
+              <div
+                class="kb-step-item step-green wow fadeInUp"
+                data-wow-delay="0.05s"
+              >
+                <div class="kb-step-circle">1</div>
+                <div class="step-text">
+                  <h6>Submit Interest</h6>
+                  <p>Tell us about your org &amp; goals.</p>
+                </div>
+              </div>
+              <!-- Arrow 1 → 2 -->
+              <div class="kb-step-arrow wow fadeInUp" data-wow-delay="0.07s">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+              <!-- Step 2 -->
+              <div
+                class="kb-step-item step-yellow wow fadeInUp"
+                data-wow-delay="0.10s"
+              >
+                <div class="kb-step-circle">2</div>
+                <div class="step-text">
+                  <h6>Short Call</h6>
+                  <p>We align on membership fit.</p>
+                </div>
+              </div>
+              <!-- Arrow 2 → 3 -->
+              <div class="kb-step-arrow wow fadeInUp" data-wow-delay="0.12s">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+              <!-- Step 3 -->
+              <div
+                class="kb-step-item step-red wow fadeInUp"
+                data-wow-delay="0.15s"
+              >
+                <div class="kb-step-circle">3</div>
+                <div class="step-text">
+                  <h6>Onboarding</h6>
+                  <p>Sign-up &amp; access member hub.</p>
+                </div>
+              </div>
+              <!-- Arrow 3 → 4 -->
+              <div class="kb-step-arrow wow fadeInUp" data-wow-delay="0.17s">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+              <!-- Step 4 -->
+              <div
+                class="kb-step-item step-green wow fadeInUp"
+                data-wow-delay="0.20s"
+              >
+                <div class="kb-step-circle">4</div>
+                <div class="step-text">
+                  <h6>Activate</h6>
+                  <p>Get intros, briefs &amp; invites.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
+    
     <!-- ===== PACKAGE ===== -->
     <section id="package" class="container-fluid py-5" style="background: #fff">
       <div class="container py-4">
@@ -553,7 +595,7 @@
       <div class="container py-4">
         <div class="text-center mb-2 wow fadeIn" data-wow-delay="0.1s">
           <h1 style="font-weight: 800; color: #111827; margin-bottom: 8px">
-            Member 
+            Member
             <span class="section-title-highlight">Companies</span>
           </h1>
           <p
@@ -786,9 +828,6 @@
             <p class="mb-2">
               <i class="fa fa-map-marker-alt me-3"></i>
               Brussels, Belgium
-            </p>
-            <p class="mb-2">
-              <i class="fa fa-phone-alt me-3"></i>+32478284084,+254759500115
             </p>
             <p class="mb-0">
               <i class="fa fa-envelope me-3"></i>info@kenya-benelux.trade
