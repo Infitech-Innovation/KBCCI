@@ -55,32 +55,32 @@
   // ==============================================================
   //  4. STICKY NAVBAR  (from theme)
   // ==============================================================
-    (function() {
-        var sticky = document.querySelector(".sticky-top");
-        if (!sticky) return;
+  (function () {
+    var sticky = document.querySelector(".sticky-top");
+    if (!sticky) return;
 
-        var logoNormal = document.getElementById("logoNormal");
-        var logoSticky = document.getElementById("logoSticky");
+    var logoNormal = document.getElementById("logoNormal");
+    var logoSticky = document.getElementById("logoSticky");
 
-        function onScrollNav() {
-            if (window.scrollY > 300) {
-                // Sticky state — show sticky logo, hide normal
-                sticky.classList.add("bg-white", "shadow-sm");
-                sticky.style.top = "0px";
-                if (logoNormal) logoNormal.style.display = "none";
-                if (logoSticky) logoSticky.style.display = "block";
-            } else {
-                // Normal state — show normal logo, hide sticky
-                sticky.classList.remove("bg-white", "shadow-sm");
-                sticky.style.top = "-150px";
-                if (logoNormal) logoNormal.style.display = "block";
-                if (logoSticky) logoSticky.style.display = "none";
-            }
-        }
+    function onScrollNav() {
+      if (window.scrollY > 300) {
+        // Sticky state — show sticky logo, hide normal
+        sticky.classList.add("bg-white", "shadow-sm");
+        sticky.style.top = "0px";
+        if (logoNormal) logoNormal.style.display = "none";
+        if (logoSticky) logoSticky.style.display = "block";
+      } else {
+        // Normal state — show normal logo, hide sticky
+        sticky.classList.remove("bg-white", "shadow-sm");
+        sticky.style.top = "-150px";
+        if (logoNormal) logoNormal.style.display = "block";
+        if (logoSticky) logoSticky.style.display = "none";
+      }
+    }
 
-        window.addEventListener("scroll", onScrollNav, { passive: true });
-        onScrollNav(); // set initial state
-    })();
+    window.addEventListener("scroll", onScrollNav, { passive: true });
+    onScrollNav(); // set initial state
+  })();
   // (function () {
   //   var sticky = document.querySelector(".sticky-top");
   //   if (!sticky) return;
