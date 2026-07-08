@@ -113,8 +113,8 @@ if (visual && canvas) {
 
     const ctx = textureCanvas.getContext("2d");
     ctx.clearRect(0, 0, textureWidth, textureHeight);
-    ctx.fillStyle = "#0f9f95";
-    ctx.strokeStyle = "#05756f";
+    ctx.fillStyle = "#2f7a43";
+    ctx.strokeStyle = "#2f7a43";
     ctx.lineWidth = 2.4;
 
     landFeatures.forEach((landFeature) => {
