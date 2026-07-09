@@ -107,7 +107,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a href="index.html" class="nav-link active">Home</a>
+              <a href="index.html" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
               <a href="about.html" class="nav-link">About</a>
@@ -116,7 +116,7 @@
               <a href="membership.html" class="nav-link">Membership</a>
             </li>
             <li class="nav-item">
-              <a href="contact.html" class="nav-link">Contact</a>
+              <a href="contact.html" class="nav-link active" aria-current="page">Contact</a>
             </li>
           </ul>
         </div>
@@ -192,7 +192,7 @@
             </p>
 
             <div class="contact-form-card wow fadeIn" data-wow-delay="0.2s">
-              <form id="contact-form">
+              <form id="contact-form" method="POST" action="php/contactserver.php">
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="form-floating">
@@ -200,6 +200,7 @@
                         type="text"
                         class="form-control"
                         id="name"
+                        name="fullname"
                         placeholder="Your Name"
                       />
                       <label for="name">Your Name</label>
@@ -211,6 +212,7 @@
                         type="email"
                         class="form-control"
                         id="email"
+                        name="email"
                         placeholder="Your Email"
                       />
                       <label for="email">Your Email</label>
@@ -222,6 +224,7 @@
                         type="text"
                         class="form-control"
                         id="subject"
+                        name="subject"
                         placeholder="Subject"
                       />
                       <label for="subject">Subject</label>
@@ -233,13 +236,14 @@
                         class="form-control"
                         placeholder="Leave a message here"
                         id="message"
+                        name="message"
                         style="height: 150px"
                       ></textarea>
                       <label for="message">Message</label>
                     </div>
                   </div>
                   <div class="col-12">
-                    <button class="btn w-100 py-3 btn-submit" type="submit">
+                    <button name="send" class="btn w-100 py-3 btn-submit" type="submit">
                       Send Message
                     </button>
                   </div>

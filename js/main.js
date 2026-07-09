@@ -56,6 +56,29 @@
   //  4. STICKY NAVBAR  (from theme)
   // ==============================================================
   (function () {
+    var navLinks = document.querySelectorAll(".navbar .navbar-nav .nav-link");
+    if (!navLinks.length) return;
+
+    var currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+    navLinks.forEach(function (link) {
+      var linkPage = new URL(link.getAttribute("href"), window.location.href)
+        .pathname.split("/")
+        .pop();
+
+      if (!linkPage) linkPage = "index.html";
+
+      if (linkPage === currentPage) {
+        link.classList.add("active");
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.classList.remove("active");
+        link.removeAttribute("aria-current");
+      }
+    });
+  })();
+
+  (function () {
     var sticky = document.querySelector(".sticky-top");
     if (!sticky) return;
 
