@@ -62,8 +62,11 @@
     var currentPage = window.location.pathname.split("/").pop() || "index.html";
 
     navLinks.forEach(function (link) {
-      var linkPage = new URL(link.getAttribute("href"), window.location.href)
-        .pathname.split("/")
+      var linkPage = new URL(
+        link.getAttribute("href"),
+        window.location.href,
+      ).pathname
+        .split("/")
         .pop();
 
       if (!linkPage) linkPage = "index.html";
@@ -529,3 +532,30 @@
     }, 100);
   }
 })();
+
+// Member packages
+const desktopNodes = document.querySelectorAll(".category-node");
+const mobileTabs = document.querySelectorAll(".mobile-tab");
+const cards = document.querySelectorAll(".package-card");
+
+function activatePackage(target) {
+  cards.forEach((card) => {
+    card.classList.toggle("active", card.dataset.package === target);
+  });
+
+  desktopNodes.forEach((node) => {
+    node.classList.toggle("active", node.dataset.target === target);
+  });
+
+  mobileTabs.forEach((tab) => {
+    tab.classList.toggle("active", tab.dataset.target === target);
+  });
+}
+
+desktopNodes.forEach((node) => {
+  node.addEventListener("click", () => activatePackage(node.dataset.target));
+});
+
+mobileTabs.forEach((tab) => {
+  tab.addEventListener("click", () => activatePackage(tab.dataset.target));
+});
