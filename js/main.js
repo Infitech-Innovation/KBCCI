@@ -88,24 +88,81 @@
     var logoNormal = document.getElementById("logoNormal");
     var logoSticky = document.getElementById("logoSticky");
 
+    function isDarkBackground(el) {
+      if (!el) return false;
+
+      var className = el.className || "";
+      if (typeof className === "string") {
+        if (/\b(bg-dark|bg-primary|bg-secondary|theme-dark|dark-section|section-dark|hero-header)\b/.test(className)) {
+          return true;
+        }
+      }
+
+      var style = window.getComputedStyle(el);
+      var bg = style.backgroundColor || "";
+      if (!bg || bg === "transparent" || bg === "rgba(0, 0, 0, 0)") {
+        return false;
+      }
+
+      var rgb = bg.match(/\d+(?:\.\d+)?/g);
+      if (!rgb || rgb.length < 3) return false;
+
+      var r = Number(rgb[0]);
+      var g = Number(rgb[1]);
+      var b = Number(rgb[2]);
+      var luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      return luminance < 0.45;
+    }
+
+    function updateNavTheme() {
+      var nav = document.querySelector(".navbar");
+      if (!nav) return;
+
+      var navCenterY = nav.getBoundingClientRect().top + nav.offsetHeight / 2;
+      var darkSectionFound = false;
+
+      document.querySelectorAll("header, section, footer, main, div").forEach(function (section) {
+        if (!section || section === nav || !section.getBoundingClientRect) return;
+
+        var rect = section.getBoundingClientRect();
+        var overlaps = rect.top <= navCenterY && rect.bottom >= navCenterY;
+        if (!overlaps) return;
+
+        if (isDarkBackground(section)) {
+          darkSectionFound = true;
+        }
+      });
+
+      nav.classList.toggle("nav-theme-dark", darkSectionFound);
+      nav.classList.toggle("nav-theme-light", !darkSectionFound);
+    }
+
     function onScrollNav() {
-      if (window.scrollY > 300) {
-        // Sticky state — show sticky logo, hide normal
+      var isMobile = window.innerWidth < 992;
+
+      if (isMobile) {
+        sticky.classList.remove("bg-white", "shadow-sm");
+        sticky.style.top = "0px";
+        if (logoNormal) logoNormal.style.display = "block";
+        if (logoSticky) logoSticky.style.display = "none";
+      } else if (window.scrollY > 300) {
         sticky.classList.add("bg-white", "shadow-sm");
         sticky.style.top = "0px";
         if (logoNormal) logoNormal.style.display = "none";
         if (logoSticky) logoSticky.style.display = "block";
       } else {
-        // Normal state — show normal logo, hide sticky
         sticky.classList.remove("bg-white", "shadow-sm");
-        sticky.style.top = "-150px";
+        sticky.style.top = "0px";
         if (logoNormal) logoNormal.style.display = "block";
         if (logoSticky) logoSticky.style.display = "none";
       }
+
+      updateNavTheme();
     }
 
     window.addEventListener("scroll", onScrollNav, { passive: true });
-    onScrollNav(); // set initial state
+    window.addEventListener("resize", onScrollNav, { passive: true });
+    onScrollNav();
   })();
   // (function () {
   //   var sticky = document.querySelector(".sticky-top");
