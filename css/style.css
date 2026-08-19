@@ -1127,14 +1127,16 @@ body {
   border-color: #f1b810;
 }
 .partner-avatar {
-  width: 90px;
-  height: 90px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
+  
   border: 3px solid #f1b810;
   margin: 0 auto 14px;
   display: block;
 }
+
 .partner-name {
   font-weight: 800;
   font-size: 1rem;
@@ -1160,6 +1162,10 @@ body {
 .kbcci-events .testimonial-img {
   position: relative;
   padding: 36px 0 36px 84px;
+  
+}
+.img-border{
+  border: 3px solid var(--kbcci-yellow);
 }
 .kbcci-events .testimonial-img::before {
   content: "";
